@@ -17,26 +17,24 @@ const Navbar = () => {
                                     <Link className="nav-link active" aria-current="page" to="/about">Sobre mí</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">CV</a>
+                                    <Link className="nav-link" to="/contacto">Contacto</Link>
                                 </li>
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <Link className="nav-link dropdown-toggle" to="/proyectos" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Proyectos
-                                    </a>
+                                    </Link>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a className="dropdown-item" href="#">Action</a></li>
-                                        <li><a className="dropdown-item" href="#">Another action</a></li>
+                                        <li><Link className="dropdown-item" to="/proyectos/web">Páginas Web</Link></li>
+                                        {/*<li><Link className="dropdown-item" to="/proyectos/movil">Aplicaciones Android</Link></li>
                                         <li><hr className="dropdown-divider"/></li>
-                                        <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                        <li><Link className="dropdown-item" to="/proyectos/software">Otros Softwares</Link></li>
+                                        */}
                                     </ul>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                                 </li>
                             </ul>
                             <form className="d-flex">
-                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                                <button className="btn btn-outline-success" type="submit">Buscar</button>
+                                <input className="form-control me-2" type="search" placeholder="Busca por palabra" aria-label="Search"/>
+                                <button className="btn btn-outline-secondary" type="submit">Buscar</button>
                             </form>
                         </div>
                     </div>
