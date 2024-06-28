@@ -3,31 +3,28 @@ import React from 'react';
 
 const Index = () => {
     return(
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img class="d-block w-100" alt="First slide"/>
+        <div>
+            <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-inner">
+                    <div className="carousel-item active" data-bs-interval="10000">
+                    <img src="./img/carr-1.jpg" className="d-block w-100" alt="im1"/>
                 </div>
-                <div class="carousel-item">
-                <img class="d-block w-100" alt="Second slide"/>
+                <div className="carousel-item" data-bs-interval="2000">
+                    <img src="./img/carr-2.jpg" className="d-block w-100" alt="im2"/>
                 </div>
-                <div class="carousel-item">
-                <img class="d-block w-100" alt="Third slide"/>
+                <div className="carousel-item">
+                    <img src="./img/carr-3.jpg" className="d-block w-100" alt="im3"/>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+            </button>
+            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+            </button>
+            </div>
         </div>
     )
 }

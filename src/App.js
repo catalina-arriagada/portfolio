@@ -1,20 +1,21 @@
 import './App.css';
-import Navbar from './components/Navbar.jsx';
-import Index from './components/Index.jsx';
+import { Routes, Route } from 'react-router-dom';
+import About from './components/About';
+import Navbar from './components/Navbar';
+import Carrousel from './components/Carrousel';
 
 function App() {
   return (
-    <div className="App">
-      <div class= "container">
-        <header>
-          <Navbar />
-        </header>
-        <div class="row">
-          <Index />
-        </div>
-
+      <div className="App">
+            <div class= "container">
+            <Routes>
+                <Route path='/' element={<Navbar />}>
+                  <Route path='/' element={<Carrousel />}></Route>
+                  <Route path='about' element={<About/>}></Route>
+                </Route>
+            </Routes>               
+            </div>
       </div>
-    </div>
   );
 }
 
