@@ -4,7 +4,7 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import Carrousel from './components/Carrousel';
 import Contact from './components/Contact';
-import Webs from './components/projects/Webs';
+import Webs from './components/projects/Webs.jsx';
 
 function App() {
   return (

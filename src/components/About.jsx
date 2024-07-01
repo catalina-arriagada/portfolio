@@ -12,7 +12,7 @@ const About = () => {
             <Container className = 'text-center mt-3 bg-body-tertiary mb-4'>
                 <Row>
                     <Col>
-                    <Image src="./img/profile.jpg" alt="profile" fluid />
+                        <Image src="./img/profile.jpg" alt="profile" fluid />
                     </Col>
                 </Row>
             </Container>
