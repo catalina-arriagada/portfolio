@@ -25,15 +25,8 @@ const Webs = () => {
     {
       Id: 2,
       Name: `Accordion Item #3`,
-      Description: `Lorem ipsum dolor sit amet, conse.`,
-      Img: `../img/carr-3.jpg`,
-      Link: ``,
-    },
-    {
-      Id: 3,
-      Name: `Accordion Item #4`,
       Description: `Lorem ipsum dolor sit.`,
-      Img: `../img/carr-1.jpg`,
+      Img: `../img/carr-3.jpg`,
       Link: ``,
     },
   ];
@@ -82,27 +75,26 @@ const Webs = () => {
 
   return (
     
-    <div className="row">
-
-      <Row xs={6} md={4} className="g-5">
+    <div className="row m-0">
+      <Row xs={1} sm ={2} md={3} className="g-5 mb-5">
         {BestWebProjectsArray.map((Element) => (
           <Col key={Element.Id}>
-            <Card>
-              <Card.Img variant="top" src={Element.Img} thumbnail fluid />
-              <Card.Body>
-                <Card.Title>{Element.Name}</Card.Title>
-                <Card.Text>{Element.Description}</Card.Text>
+            <Card className="image">
+              <Card.Img variant='top' src={Element.Img} thumbnail fluid />
+              <Card.Body className="cardBody">
+                <Card.Title className="cardTitle">{Element.Name}</Card.Title>
+                <Card.Text className="cardText">{Element.Description}</Card.Text>
               </Card.Body>
             </Card>
           </Col>
         ))}
       </Row>
-
-      <Accordion className="mt-4" defaultActiveKey="0" flush>
+        <div></div>
+      <Accordion defaultActiveKey="0" flush>
         {WebProjectsArray.map((Element) => (
             <Accordion.Item eventKey={Element.Id}>
-            <Accordion.Header>{Element.Name}</Accordion.Header>
-            <Accordion.Body>{Element.Description}</Accordion.Body>
+                <Accordion.Header>{Element.Name}</Accordion.Header>
+                <Accordion.Body>{Element.Description}</Accordion.Body>
             </Accordion.Item>
         ))}
       </Accordion>
