@@ -3,12 +3,13 @@
 
 import React from 'react';
 import { Image, Row, Container, Col } from 'react-bootstrap';
+import TransitionText from './TransitionText';
 
 const About = () => {
     return(
-        <div className='row'>
-            <h1 className='fs-2 text-secondary fw-medium text-center mt-2'>Catalina Arriagada (Dev Cat Girl)</h1>
-            <p className="text-center mt-2">Desarrolladora de Software Chilena, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed repellendus possimus corrupti incidunt asperiores nemo quia eum laborum hic iure, soluta fugiat assumenda reprehenderit veniam minima voluptas! Tenetur, omnis aspernatur!</p>
+        <div className='row pt-4'>
+            <h2 className='col display-6 text-center'>Catalina Arriagada (Dev Cat Girl)</h2>
+            <p className="text-center mt-2"></p>
             <Container className = 'text-center mt-3 bg-body-tertiary mb-4'>
                 <Row>
                     <Col>
@@ -16,6 +17,7 @@ const About = () => {
                     </Col>
                 </Row>
             </Container>
+            <TransitionText />
         </div>
     )
 }

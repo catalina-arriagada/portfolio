@@ -1,0 +1,9 @@
+.button_transition_text {
+    background-color:rgb(233, 223, 223);
+    border-radius: 40%;
+    transition: .2s linear;
+}
+
+.button_transition_text:hover {
+    transform: scale(1.2);
+  }

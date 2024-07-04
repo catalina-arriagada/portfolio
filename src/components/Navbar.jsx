@@ -21,7 +21,7 @@ const Navbar = () => {
                                 </li>
                                 <li className="nav-item dropdown">
                                     <Link className="nav-link dropdown-toggle" to="/proyectos" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Proyectos
+                                        Proyectos     
                                     </Link>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><Link className="dropdown-item" to="/proyectos/web">Páginas Web</Link></li>
@@ -42,7 +42,7 @@ const Navbar = () => {
                 <Outlet />
             </div>
         </header>
-    )
-}
+        )
+    }
 
 export default Navbar;

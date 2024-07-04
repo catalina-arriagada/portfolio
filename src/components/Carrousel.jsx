@@ -1,5 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import { Image } from 'react-bootstrap';
+import Index from './Index.jsx';
+import '../styles/carousel.css';
 
 function Carrousel() {
 
@@ -23,12 +25,13 @@ function Carrousel() {
 
   return (
     <div className="row">
+      < Index />
       <Carousel sm>
         {ImgArray.map((Element) => {
           return (
             <Carousel.Item className='text-center mt-5 bg-body-tertiary'>
               <Image src={Element.Img} text={Element.Name} fluid/>
-             </Carousel.Item>
+            </Carousel.Item>
           );
         })}
       </Carousel>

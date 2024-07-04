@@ -75,12 +75,13 @@ const Webs = () => {
 
   return (
     
-    <div className="row m-0">
-      <Row xs={1} sm ={2} md={3} className="g-5 mb-5">
+    <div className="row pt-4">
+      <h2 className='display-6 text-center pb-3'>Proyectos</h2>
+      <Row xs={1} sm ={2} md={3} className="g-6 mb-5 mt-1">
         {BestWebProjectsArray.map((Element) => (
           <Col key={Element.Id}>
-            <Card className="image">
-              <Card.Img variant='top' src={Element.Img} thumbnail fluid />
+            <Card className="image m-3 p-1">
+              <Card.Img variant='top' src={Element.Img} fluid />
               <Card.Body className="cardBody">
                 <Card.Title className="cardTitle">{Element.Name}</Card.Title>
                 <Card.Text className="cardText">{Element.Description}</Card.Text>
