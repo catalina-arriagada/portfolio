@@ -1,9 +1,17 @@
 import React from 'react';
 import { Form, Col } from 'react-bootstrap';
-//formulario
-//redes sociales 
+import InstaLogoButton from './InstaLogo';
+import FaceLogoButton from './FaceLogo';
+//formulario validar
+//poner redes sociales 
 
 const Contact = () => {
+    const handleClickInsta = () => {
+        window.open("http://www.instagram.com");
+      };
+      const handleClickFace = () => {
+        window.open("http://www.facebook.com");
+    }
     return(
         <div className='row pt-4'>
             <h2 className='col display-6 text-center'>Contacto</h2>
@@ -27,7 +35,13 @@ const Contact = () => {
                     <Form.Control as="textarea" rows={3} placeholder='Escribe aquí tus sugerencias y propuestas' className='text-center' />
                 </Form.Group>
             </Form>
+            <div className='container'>
+                <InstaLogoButton imageInstaSource="./img/logoinsta192.png" onClick={handleClickInsta}/>
+                <FaceLogoButton imageFaceSource="./img/logofacebook192.png" onClick={handleClickFace}/> 
+            </div>
         </div>
     )
 }
 export default Contact;
+
+//<div imageFaceSource="./img/logofacebook192.png" onClick={handleClickFace}></div>
