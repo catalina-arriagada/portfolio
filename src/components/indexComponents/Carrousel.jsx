@@ -1,7 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import { Image } from 'react-bootstrap';
-import Index from './Index.jsx';
-import '../styles/carousel.css';
+import Index from '../Index.jsx';
+import '../../styles/carousel.css';
 
 function Carrousel() {
 

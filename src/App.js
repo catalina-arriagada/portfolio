@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import About from './components/About';
 import Navbar from './components/Navbar.jsx';
-import Carrousel from './components/Carrousel';
+import Carrousel from './components/indexComponents/Carrousel';
 import Contact from './components/Contact';
 import Webs from './components/projects/Webs.jsx';
 

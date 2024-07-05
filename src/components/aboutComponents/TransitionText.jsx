@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Collapse from 'react-bootstrap/Collapse';
-import '../styles/transition_text.css';
+import '../../styles/transition_text.css';
 import MessageCircleIcon from './MessageCircleIcon';
 
 //imagen pequeña como globo de historieta con click, y aparece imagen en grande, en carrusel. La primera imagen estara activa

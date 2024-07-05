@@ -1,19 +1,9 @@
-.insta-btn {
+.rrss-btn {
     cursor: pointer;
   }
 
-  .face-btn {
-    cursor: pointer;
-  }
-
-  .insta-image { 
+.rrss-image { 
     display: block;
     width: 100%;
     height: auto;
-  }
-
-  .face-image {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+}

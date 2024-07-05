@@ -4,6 +4,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import InvisibleButtonCard from '../projectsComponents/InvisibleButtonCard';
 import "../../styles/webs.css";
 
 const Webs = () => {
@@ -13,21 +14,21 @@ const Webs = () => {
       Name: `Accordion Item #1`,
       Description: `Lorem ipsum dolor sit amet, consectetur.`,
       Img: `../img/carr-1.jpg`,
-      Link: ``,
+      Link: `https://www.google.com`,
     },
     {
       Id: 1,
       Name: `Accordion Item #2`,
       Description: `Lorem ipsum dolor sit amet.`,
       Img: `../img/carr-2.jpg`,
-      Link: ``,
+      Link: `https://www.google.com`,
     },
     {
       Id: 2,
       Name: `Accordion Item #3`,
       Description: `Lorem ipsum dolor sit.`,
       Img: `../img/carr-3.jpg`,
-      Link: ``,
+      Link: `https://www.google.com`,
     },
   ];
 
@@ -85,6 +86,7 @@ const Webs = () => {
               <Card.Body className="cardBody">
                 <Card.Title className="cardTitle">{Element.Name}</Card.Title>
                 <Card.Text className="cardText">{Element.Description}</Card.Text>
+                <InvisibleButtonCard onClick={() => window.open(Element.Link)} />
               </Card.Body>
             </Card>
           </Col>

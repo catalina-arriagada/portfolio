@@ -1,9 +1,12 @@
 import React from 'react';
 import { Form, Col } from 'react-bootstrap';
-import InstaLogoButton from './InstaLogo';
-import FaceLogoButton from './FaceLogo';
+import InstaLogoButton from './rrss/InstaLogo';
+import FaceLogoButton from './rrss/FaceLogo';
+import LinkeLogoButton from './rrss/LinkeLogo';
+import YoutLogoButton from './rrss/YoutLogo';
 //formulario validar
-//poner redes sociales 
+//organizar grid de rrss
+//personalizar estilo caja rrss (color pastel, adornos)
 
 const Contact = () => {
     const handleClickInsta = () => {
@@ -11,7 +14,14 @@ const Contact = () => {
       };
       const handleClickFace = () => {
         window.open("http://www.facebook.com");
-    }
+      };
+      const handleClickLinkedin = () => {
+        window.open("http://www.linkedin.com");
+      };
+      const handleClickYoutube = () => {
+        window.open("http://www.youtube.com");
+      };
+
     return(
         <div className='row pt-4'>
             <h2 className='col display-6 text-center'>Contacto</h2>
@@ -38,10 +48,10 @@ const Contact = () => {
             <div className='container'>
                 <InstaLogoButton imageInstaSource="./img/logoinsta192.png" onClick={handleClickInsta}/>
                 <FaceLogoButton imageFaceSource="./img/logofacebook192.png" onClick={handleClickFace}/> 
+                <LinkeLogoButton imageLinkeSource="./img/logolinkedin192.png" onClick={handleClickLinkedin}/> 
+                <YoutLogoButton imageYoutSource="./img/logoyoutube192.png" onClick={handleClickYoutube}/> 
             </div>
         </div>
     )
 }
 export default Contact;
-
-//<div imageFaceSource="./img/logofacebook192.png" onClick={handleClickFace}></div>

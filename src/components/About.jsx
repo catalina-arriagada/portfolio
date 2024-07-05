@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { Image, Row, Container, Col } from 'react-bootstrap';
-import TransitionText from './TransitionText';
+import TransitionText from './aboutComponents/TransitionText';
 
 const About = () => {
     return(
