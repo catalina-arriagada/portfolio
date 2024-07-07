@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Col, Container, Row } from 'react-bootstrap';
+import { Form, Col, Row } from 'react-bootstrap';
 import InstaLogoButton from './rrss/InstaLogo';
 import FaceLogoButton from './rrss/FaceLogo';
 import LinkeLogoButton from './rrss/LinkeLogo';
