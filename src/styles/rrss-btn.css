@@ -4,6 +4,67 @@
 
 .rrss-image { 
     display: block;
-    width: 100%;
     height: auto;
+}
+
+@media only screen and (max-width: 500px) {
+
+  .rrss-div {
+    margin-top: 200px;
+    margin-bottom: 30px;
+  }
+
+  .row .row-cols-4 {
+    width: 60%;
+    margin-left: 60px;
+  }
+
+  .rrss-title{
+    margin: 15px;
+    padding-left: 60px;
+  }
+
+}
+
+@media only screen and (min-width: 500px) {
+
+  .row .row-cols-4 {
+    width: 48%;
+    margin-left: 100px;
+  }
+
+  .rrss-title{
+    padding-left: 100px;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+  .row .row-cols-4 {
+    width: 40%;
+    margin-left: 200px;
+  }
+
+  .rrss-title{
+    padding-left: 200px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+
+  .row .row-cols-4 {
+    width: 26%;
+    margin-left: 50px;
+  }
+
+  .rrss-title{
+    padding-left: 50px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .row .row-cols-4 {
+    width: 20%;
+  }
 }

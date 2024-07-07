@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Col } from 'react-bootstrap';
+import { Form, Col, Container, Row } from 'react-bootstrap';
 import InstaLogoButton from './rrss/InstaLogo';
 import FaceLogoButton from './rrss/FaceLogo';
 import LinkeLogoButton from './rrss/LinkeLogo';
@@ -45,11 +45,14 @@ const Contact = () => {
                     <Form.Control as="textarea" rows={3} placeholder='Escribe aquí tus sugerencias y propuestas' className='text-center' />
                 </Form.Group>
             </Form>
-            <div className='container'>
-                <InstaLogoButton imageInstaSource="./img/logoinsta192.png" onClick={handleClickInsta}/>
-                <FaceLogoButton imageFaceSource="./img/logofacebook192.png" onClick={handleClickFace}/> 
-                <LinkeLogoButton imageLinkeSource="./img/logolinkedin192.png" onClick={handleClickLinkedin}/> 
-                <YoutLogoButton imageYoutSource="./img/logoyoutube192.png" onClick={handleClickYoutube}/> 
+            <div className='rrss-div'>
+                <h6 className='rrss-title'>Redes sociales</h6>
+                <Row xs={4}>
+                    <InstaLogoButton imageInstaSource="./img/logoinsta192.png" onClick={handleClickInsta}/>
+                    <FaceLogoButton imageFaceSource="./img/logofacebook192.png" onClick={handleClickFace}/> 
+                    <LinkeLogoButton imageLinkeSource="./img/logolinkedin192.png" onClick={handleClickLinkedin}/> 
+                    <YoutLogoButton imageYoutSource="./img/logoyoutube192.png" onClick={handleClickYoutube}/> 
+                </Row>
             </div>
         </div>
     )

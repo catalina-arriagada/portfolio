@@ -4,7 +4,7 @@ import '../../styles/rrss-btn.css';
 
 const InstaLogoButton = ({imageInstaSource, onClick }) => {
   return (
-        <Button className="rss-btn col-md-1 col-2" variant='none' onClick={onClick}>
+        <Button className="rss-btn" variant='none' onClick={onClick}>
             <Image className='rrss-image' src={imageInstaSource} alt="Instagram" fluid />
         </Button>
     );

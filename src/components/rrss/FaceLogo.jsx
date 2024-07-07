@@ -4,7 +4,7 @@ import '../../styles/rrss-btn.css';
 
 const FaceLogoButton = ({imageFaceSource, onClick }) => {
   return (
-        <Button className='rss-btn col-md-1 col-2' variant='none' onClick={onClick}>
+        <Button className='rss-btn' variant='none' onClick={onClick}>
             <Image src={imageFaceSource} className='rrss-image' alt="Facebook" fluid />
         </Button>
     );
