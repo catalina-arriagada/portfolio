@@ -6,8 +6,6 @@ import LinkeLogoButton from "./rrss/LinkeLogo";
 import YoutLogoButton from "./rrss/YoutLogo";
 import { useState } from "react";
 
-//formulario validar
-//organizar grid de rrss
 //personalizar estilo caja rrss (color pastel, adornos)
 
 const Contact = () => {
@@ -62,8 +60,8 @@ const Contact = () => {
   return (
     
     <div className="row pt-4">
-      <h2 className="col display-6 text-center">Contacto</h2>
-      <Form className="text-center mt-5" onSubmit={handleSubmit} noValidate validated={validated}>
+      <h2 className="display-6 text-center">Contacto</h2>
+      <Form xs={3} className="form-contact text-center mt-5 col" onSubmit={handleSubmit} noValidate validated={validated}>
         <Form.Group
           as={Col}
           rows={3}
@@ -101,8 +99,9 @@ const Contact = () => {
             className="text-center"
           />
         </Form.Group>
-        <Button type="submit">Submit form</Button>
+        <Button className="mb-2" type="submit">Enviar</Button>
       </Form>
+
       <div className="rrss-div">
         <h6 className="rrss-title">Redes sociales</h6>
         <Row xs={4}>

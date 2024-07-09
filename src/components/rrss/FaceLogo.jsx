@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Image } from 'react-bootstrap';
-import '../../styles/rrss-btn.css';
+import '../../styles/contact.css';
 
 const FaceLogoButton = ({imageFaceSource, onClick }) => {
   return (
