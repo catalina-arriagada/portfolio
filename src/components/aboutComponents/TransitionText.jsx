@@ -15,13 +15,14 @@ function TransitionText() {
 
   return (
     <div>
+      
       <Button
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         variant='light'
         className='button_transition_text'>
         <MessageCircleIcon />
-        Hola! Soy Dev Cat!
+        <h6 className='circle-title'>Hola! Soy Dev Cat!</h6>
       </Button>
 
       <div style={{ minHeight: '150px' }}>
