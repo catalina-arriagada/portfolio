@@ -2,8 +2,9 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Collapse from 'react-bootstrap/Collapse';
+import { Image } from 'react-bootstrap';
+import '../../styles/circle.css';
 import '../../styles/transition_text.css';
-import MessageCircleIcon from './MessageCircleIcon';
 
 //imagen pequeña como globo de historieta con click, y aparece imagen en grande, en carrusel. La primera imagen estara activa
 //pequeño juego con letras. Cada letra de mi nombre es una foto que representa mi marca personal
@@ -15,13 +16,12 @@ function TransitionText() {
 
   return (
     <div>
-      
       <Button
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         variant='light'
         className='button_transition_text'>
-        <MessageCircleIcon />
+        <Image className='circle-img' src="./img/circle.png" alt="globo" />
         <h6 className='circle-title'>Hola! Soy Dev Cat!</h6>
       </Button>
 

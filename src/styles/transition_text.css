@@ -9,10 +9,8 @@
   }
 
 .circle-title{
-    position: absolute; 
-    max-width: 20vh;
-    left: 12vw; 
-    top: 100svh;
+    position: relative;
+    bottom: 70px;
 }
 
 .circle-title:hover{

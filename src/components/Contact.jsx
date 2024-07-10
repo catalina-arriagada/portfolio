@@ -1,11 +1,13 @@
 import React from "react";
-import { Form, Col, Row, Button } from "react-bootstrap";
+import { Form, Col, Row, Button, Image } from "react-bootstrap";
 import InstaLogoButton from "./rrss/InstaLogo";
 import FaceLogoButton from "./rrss/FaceLogo";
 import LinkeLogoButton from "./rrss/LinkeLogo";
 import YoutLogoButton from "./rrss/YoutLogo";
 import { useState } from "react";
-import VirtualChat from "./VirtualChat";
+import Card from 'react-bootstrap/Card';
+import Collapse from 'react-bootstrap/Collapse';
+import '../styles/contact.css';
 
 //personalizar estilo caja rrss (color pastel, adornos)
 
@@ -21,12 +23,6 @@ const Contact = () => {
   };
   const handleClickYoutube = () => {
     window.open("http://www.youtube.com");
-  };
-  const handleClickChat = () => {
-    window.open("http://www.google.com");
-  };
-  const handleMouseOverChat = () => {
-    <VirtualChat />
   };
 
   const [email, setEmail] = useState("");
@@ -47,6 +43,7 @@ const Contact = () => {
     }
   };
 
+  const [open, setOpen] = useState(false); //virtual chat
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (e) => {
@@ -136,11 +133,24 @@ const Contact = () => {
           />
         </Row>
       </div>
-      <VirtualChat
-        imageChatSource="./img/chat-an.png"
-        onClick={handleClickChat}
-        onMouseOver={handleMouseOverChat}
-      />
+
+      <div className="row">
+        <Button
+          className="chat-btn col-1" variant="none"
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}>
+          <Image className="chat-image" src="./img/chat-an.png" alt="Chat virtual" />
+        </Button>
+          <Collapse in={open}>
+            <div className="collapse-card">
+              <Card body style={{ width: '400px' }}>
+                 Assumenda reprehenderit veniam minima voluptas! Tenetur, omnis aspernatur!
+              </Card>
+            </div>
+          </Collapse>
+      </div>
+        
+        
     </div>
   );
 };
