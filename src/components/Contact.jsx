@@ -134,7 +134,7 @@ const Contact = () => {
         </Row>
       </div>
 
-      <div className="row">
+      <div className="chat-div">
         <Button
           className="chat-btn col-1" variant="none"
           onClick={() => setOpen(!open)}
@@ -143,7 +143,7 @@ const Contact = () => {
         </Button>
           <Collapse in={open}>
             <div className="collapse-card">
-              <Card body style={{ width: '400px' }}>
+              <Card className="card" body style={{ width: '400px' }}>
                  Assumenda reprehenderit veniam minima voluptas! Tenetur, omnis aspernatur!
               </Card>
             </div>
