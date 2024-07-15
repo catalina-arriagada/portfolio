@@ -5,9 +5,10 @@ import FaceLogoButton from "./rrss/FaceLogo";
 import LinkeLogoButton from "./rrss/LinkeLogo";
 import YoutLogoButton from "./rrss/YoutLogo";
 import { useState } from "react";
-import Card from 'react-bootstrap/Card';
-import Collapse from 'react-bootstrap/Collapse';
-import '../styles/contact.css';
+import Card from "react-bootstrap/Card";
+import Collapse from "react-bootstrap/Collapse";
+import "../styles/contact.css";
+import VirtualChatOpened from "./VirtualChatOpened";
 
 //personalizar estilo caja rrss (color pastel, adornos)
 
@@ -135,22 +136,26 @@ const Contact = () => {
       </div>
 
       <div className="chat-div">
+        <Collapse in={open}>
+          <div className="collapse-card">
+            <Card>
+              <VirtualChatOpened />
+            </Card>
+          </div>
+        </Collapse>
         <Button
-          className="chat-btn col-1" variant="none"
+          className="chat-btn col-1"
+          variant="none"
           onClick={() => setOpen(!open)}
-          aria-expanded={open}>
-          <Image className="chat-image" src="./img/chat-an.png" alt="Chat virtual" />
+          aria-expanded={open}
+        >
+          <Image
+            className="chat-image"
+            src="./img/chat-an.png"
+            alt="Chat virtual"
+          />
         </Button>
-          <Collapse in={open}>
-            <div className="collapse-card">
-              <Card className="card" body style={{ width: '400px' }}>
-                 Assumenda reprehenderit veniam minima voluptas! Tenetur, omnis aspernatur!
-              </Card>
-            </div>
-          </Collapse>
       </div>
-        
-        
     </div>
   );
 };

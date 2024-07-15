@@ -18,6 +18,16 @@
     height: auto;
 }
 
+.inner-header-img{
+  max-width: 100%;
+  height: 10.5vh;
+  width: 259.094px;
+}
+
+.img-box {
+  padding: 0 !important;
+}
+
 @media only screen and (min-width: 200px) {
   .chat-btn {
     width: 1%;
@@ -46,19 +56,21 @@
     margin-top: 100px;
   }
 
+  .chat-div {
+    padding: 0 !important;
+    width: 1% !important;
+  }
+
   .collapse-card{
-    position: relative;
-    right: 120px;
-    width: 400px;
+    width: 0px;
   }
 
   .card {
-    width: 100%;
-    font-size: 8px;
-  }
-
-  .card .card {
-    width: 100% !important;
+    font-size: 10px;
+    position: absolute;
+    left: 60svh;
+    bottom: 50svh;
+    width: 35svh;
   }
 }
 
