@@ -58,7 +58,8 @@
 
   .chat-div {
     padding: 0 !important;
-    width: 1% !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 
   .collapse-card{
@@ -68,8 +69,8 @@
   .card {
     font-size: 10px;
     position: absolute;
-    left: 60svh;
-    bottom: 50svh;
+    right: 35svh;
+    bottom: 35svh;
     width: 35svh;
   }
 }

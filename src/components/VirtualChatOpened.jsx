@@ -1,6 +1,6 @@
 //chatwrapper
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect  } from 'react';
 import { Container, Row, Col, Form, Button, ListGroup, Image } from 'react-bootstrap';
 import '../styles/contact.css';
 import moment from 'moment'; // Instala moment.js para formatear las marcas de tiempo: npm install moment
@@ -9,6 +9,21 @@ import moment from 'moment'; // Instala moment.js para formatear las marcas de t
 const VirtualChatOpened = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const [autoMessage, setAutoMessage] = useState(false);
+
+  useEffect(() => {
+    let interval;
+    if (autoMessage) {
+      interval = setInterval(() => {
+        const newMessage = {
+          timestamp: moment().format('YYYY-MM-DD HH:mm:ss')
+        };
+        setMessages((prevMessages) => [...prevMessages, newMessage]);
+      }, 2500); // Enviar un mensaje cada 5 segundos
+    }
+    return () => clearInterval(interval);
+  }, [autoMessage]);
+
 
   const handleSendMessage = () => {
     if (input.trim()) {
@@ -41,6 +56,7 @@ const VirtualChatOpened = () => {
             {messages.map((msg, index) => (
               <div className="chat-container">
                 <ListGroup.Item key={index}>
+                  <strong>{msg.sender}:</strong> {msg.message}
                   <div className="text-muted" style={{ fontSize: '0.8em' }}>
                     {msg.timestamp}
                   </div>
@@ -70,6 +86,12 @@ const VirtualChatOpened = () => {
         <Col xs="auto">
           <Button onClick={handleSendMessage} variant="primary">
             Enviar
+          </Button>
+          <Button
+            onClick={() => setAutoMessage(!autoMessage)}
+            variant={autoMessage ? 'danger' : 'success'}
+          >
+            {autoMessage ? 'Detener Mensajes Automáticos' : 'Iniciar Mensajes Automáticos'}
           </Button>
         </Col>
       </Row>
