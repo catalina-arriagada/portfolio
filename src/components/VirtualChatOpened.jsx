@@ -1,74 +1,69 @@
 //chatwrapper
-import React from 'react';
-import { useState, useEffect  } from 'react';
-import { Container, Row, Col, Form, Button, ListGroup, Image } from 'react-bootstrap';
-import '../styles/contact.css';
-import moment from 'moment'; // Instala moment.js para formatear las marcas de tiempo: npm install moment
-
+import React from "react";
+import { useState, useEffect } from "react";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  ListGroup,
+  Image,
+  Tab
+} from "react-bootstrap";
+import "../styles/contact.css";
+import moment from "moment"; // Instala moment.js para formatear las marcas de tiempo: npm install moment
 
 const VirtualChatOpened = () => {
   const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState('');
-  const [autoMessage, setAutoMessage] = useState(false);
+  const [input, setInput] = useState("");
 
   useEffect(() => {
-    let interval;
-    if (autoMessage) {
-      interval = setInterval(() => {
-        const newMessage = {
-          timestamp: moment().format('YYYY-MM-DD HH:mm:ss')
-        };
-        setMessages((prevMessages) => [...prevMessages, newMessage]);
-      }, 2500); // Enviar un mensaje cada 5 segundos
-    }
-    return () => clearInterval(interval);
-  }, [autoMessage]);
-
+    const initialMessage = {
+      timestamp: moment().format("YYYY-MM-DD HH:mm:ss"),
+    };
+    setMessages([initialMessage]);
+  }, []);
 
   const handleSendMessage = () => {
     if (input.trim()) {
       const newMessage = {
-        sender: 'Usuario',
+        sender: "Usuario: ",
         message: input,
-        timestamp: moment().format('YYYY-MM-DD HH:mm:ss')
+        timestamp: moment().format("YYYY-MM-DD HH:mm:ss"),
       };
       setMessages([...messages, newMessage]);
-      setInput('');
+      setInput("");
     }
   };
 
   return (
-    <Container className='box'>
+    <Container className="box">
       <Row>
-        <Col className='img-box'>
+        <Col className="img-box">
           <header>
             <div className="inner">
-              <Image className='inner-header-img' src='./img/carr-1.jpg' alt="Chat IA" />
+              <Image
+                className="inner-header-img"
+                src="./img/carr-1.jpg"
+                alt="Chat IA"
+              />
             </div>
           </header>
         </Col>
       </Row>
 
       <Row>
-        <Col className='scrollable'>
-            <h2>Chat</h2>
+        <Col className="scrollable">
+          <h2>Chat</h2>
           <ListGroup>
             {messages.map((msg, index) => (
-              <div className="chat-container">
-                <ListGroup.Item key={index}>
-                  <strong>{msg.sender}:</strong> {msg.message}
-                  <div className="text-muted" style={{ fontSize: '0.8em' }}>
-                    {msg.timestamp}
-                  </div>
-                </ListGroup.Item>
-                <div className="chat_timestamp" style={{ fontSize: '0.8em' }}>
-                {msg.timestamp}||
+              <Tab.Content key={index}>
+                <strong>{msg.sender}</strong> {msg.message}
+                <div className="text-muted" style={{ fontSize: '0.8em' }}>
+                  {msg.timestamp}
                 </div>
-                <ListGroup.Item key={index}>
-                  <strong>{msg.sender}:</strong> {msg.message}
-                </ListGroup.Item>
-              </div>
-              
+              </Tab.Content>
             ))}
           </ListGroup>
         </Col>
@@ -87,17 +82,10 @@ const VirtualChatOpened = () => {
           <Button onClick={handleSendMessage} variant="primary">
             Enviar
           </Button>
-          <Button
-            onClick={() => setAutoMessage(!autoMessage)}
-            variant={autoMessage ? 'danger' : 'success'}
-          >
-            {autoMessage ? 'Detener Mensajes Automáticos' : 'Iniciar Mensajes Automáticos'}
-          </Button>
         </Col>
       </Row>
     </Container>
   );
-  
 };
 
 export default VirtualChatOpened;
