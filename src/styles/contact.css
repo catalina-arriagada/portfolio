@@ -32,16 +32,10 @@
   .chat-btn {
     width: 1%;
     position: absolute; 
-    right: 6px; 
+    right: 50px; 
     top: 500px;
     padding-right: 0 !important;
   } 
-
-  .chat-btn:hover {
-    position: absolute; 
-    right: 12px; 
-  }
-
    .chat-image {
     width: 120%;
     position: absolute; 
@@ -60,19 +54,32 @@
     padding: 0 !important;
     width: 0 !important;
     height: 0 !important;
+    margin-bottom: 20rem !important;
   }
 
   .collapse-card{
     width: 0px;
+    
+    
   }
 
   .card {
     font-size: 10px;
-    position: absolute;
-    right: 35svh;
-    bottom: 35svh;
-    width: 35svh;
+    display: flex;
+    
   }
+
+  .box {
+    min-width: 15rem;
+    border: 1px solid black;
+    position: relative;
+    bottom: 25rem;
+  }
+
+  .chat-bar {
+    margin-top: 5rem !important;
+  }
+
 }
 
 @media only screen and (min-width: 400px) {

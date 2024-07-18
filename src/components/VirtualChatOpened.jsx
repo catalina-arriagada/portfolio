@@ -55,7 +55,6 @@ const VirtualChatOpened = () => {
 
       <Row>
         <Col className="scrollable">
-          <h2>Chat</h2>
           <ListGroup>
             {messages.map((msg, index) => (
               <Tab.Content key={index}>
@@ -69,7 +68,7 @@ const VirtualChatOpened = () => {
         </Col>
       </Row>
 
-      <Row className="mt-3">
+      <Row className="chat-bar">
         <Col>
           <Form.Control
             type="text"

@@ -1,7 +1,7 @@
 .image {
     position: relative;
     transition: transform .2s; 
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .image:hover{

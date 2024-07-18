@@ -76,12 +76,12 @@ const Webs = () => {
 
   return (
     
-    <div className="row pt-4">
+    <div className="container pt-4">
       <h2 className='display-6 text-center pb-3'>Proyectos</h2>
-      <Row className="g-6 mb-5 mt-1">
+      <Row xs={1} sm={2} lg={3} className="g-6 mb-5 mt-1">
         {BestWebProjectsArray.map((Element) => (
-          <Col key={Element.Id}>
-            <Card className="card-full image m-3 p-1">
+          <Col className="mr-3 mt-3" key={Element.Id}>
+            <Card className="card-full image p-1">
               <Card.Img variant='top' src={Element.Img} fluid />
               <Card.Body className="cardBody">
                 <Card.Title className="cardTitle">{Element.Name}</Card.Title>
