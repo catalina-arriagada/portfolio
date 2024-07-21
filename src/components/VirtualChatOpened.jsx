@@ -5,8 +5,6 @@ import {
   Container,
   Row,
   Col,
-  Form,
-  Button,
   ListGroup,
   Image,
   Tab
@@ -70,7 +68,7 @@ const VirtualChatOpened = () => {
 
       <Row className="chat-bar">
         <Col>
-          <Form.Control
+          <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -78,9 +76,9 @@ const VirtualChatOpened = () => {
           />
         </Col>
         <Col xs="auto">
-          <Button onClick={handleSendMessage} variant="primary">
+          <btn onClick={handleSendMessage}>
             Enviar
-          </Button>
+          </btn>
         </Col>
       </Row>
     </Container>

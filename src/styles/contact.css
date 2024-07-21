@@ -28,6 +28,12 @@
   padding: 0 !important;
 }
 
+div .card {
+ border-color: transparent;
+ width: 0px;
+ height: 0px;
+}
+
 @media only screen and (min-width: 200px) {
   .chat-btn {
     width: 1%;
@@ -58,28 +64,58 @@
   }
 
   .collapse-card{
-    width: 0px;
-    
-    
+    border: none;
   }
 
   .card {
-    font-size: 10px;
+    font-size: 9px;
     display: flex;
-    
+    position: relative;
+    right: 26svh;
   }
 
   .box {
-    min-width: 15rem;
+    min-width: 9rem;
+    min-height: 11rem;
     border: 1px solid black;
     position: relative;
-    bottom: 25rem;
+    bottom: 16rem;
+    background-color: #FFFFFF;
   }
 
   .chat-bar {
-    margin-top: 5rem !important;
+    margin-top: 60px !important;
   }
 
+  .chat-bar .col {
+    width: 10px !important;
+  }
+
+  .chat-bar input {
+    width: 5rem;
+  }
+
+  .chat-bar btn {
+    border: 1px solid black;
+    padding-block: 1px;
+    padding-inline: 4px;
+  }
+
+  .chat-bar .col-auto {
+    margin-top: 3px;
+  }
+}
+
+@media only screen and (min-width: 310px) {
+  .chat-bar {
+    margin-top: 45px !important;
+  }
+}
+
+@media only screen and (min-width: 360px) {
+  .chat-bar {
+    margin-top: 58px !important;
+  }
 }
 
 @media only screen and (min-width: 400px) {
@@ -92,8 +128,8 @@
     margin-top: 100px;
   }
 
-  .collapse-card {
-    left: 10px;
+  .chat-bar {
+    margin-top: 40px !important;
   }
 
 }
