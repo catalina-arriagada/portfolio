@@ -2,38 +2,26 @@
   border: transparent !important;
 }
 .rrss-btn, .chat-btn {
-    cursor: pointer;
-  }
-
+  cursor: pointer;
+}
 .chat-image {
   transition: .2s linear;
 }
-
 .chat-image:hover {
   transform: scale(1.2); 
 }
-
 .rrss-image { 
-    display: block;
-    height: auto;
+  display: block;
+  height: auto;
 }
-
-.inner-header-img{
-  max-width: 100%;
-  height: 10.5vh;
-  width: 259.094px;
-}
-
 .img-box {
   padding: 0 !important;
 }
-
 div .card {
  border-color: transparent;
  width: 0px;
  height: 0px;
 }
-
 @media only screen and (min-width: 200px) {
   .chat-btn {
     width: 1%;
@@ -47,138 +35,212 @@ div .card {
     position: absolute; 
     padding-right: 0 !important;
   }  
-
+  .inner-header-img{
+    height: 6vh;
+  }
   .row .row-cols-4 {
     width: 70%;
   }
-
   .rrss-title{
     margin-top: 100px;
   }
-
   .chat-div {
     padding: 0 !important;
     width: 0 !important;
     height: 0 !important;
     margin-bottom: 20rem !important;
   }
-
   .collapse-card{
     border: none;
   }
-
   .card {
-    font-size: 9px;
-    display: flex;
-    position: relative;
-    right: 26svh;
-  }
-
-  .box {
-    min-width: 9rem;
-    min-height: 11rem;
-    border: 1px solid black;
     position: relative;
     bottom: 16rem;
+    right: 31svh;
+  }
+  .box {
+    min-width: 12rem;
+    border: 1px solid black;
     background-color: #FFFFFF;
   }
-
-  .chat-bar {
-    margin-top: 60px !important;
+  .scrollable {
+    font-size: 12px;
+    display: flex;
+    height: 14rem;/* Altura fija */
+    overflow-y: auto; /* Desplazamiento vertical */
   }
-
-  .chat-bar .col {
+  .inner-header-img{
+    max-width: 100%;
+    width: 259.094px;
+  }
+  .chat-bar{
+    font-size: 12px;
+    display: flex;
+  }
+  .chat-bar .col{
     width: 10px !important;
   }
-
-  .chat-bar input {
-    width: 5rem;
+  .chat-bar .col-auto{
+    width: 41.8px !important;
+    margin-top: 2px;
   }
-
+  .chat-bar input {
+    width: 7rem;
+  }
   .chat-bar btn {
-    border: 1px solid black;
     padding-block: 1px;
     padding-inline: 4px;
-  }
-
-  .chat-bar .col-auto {
-    margin-top: 3px;
+    border: 1px solid black;
   }
 }
-
-@media only screen and (min-width: 310px) {
-  .chat-bar {
-    margin-top: 45px !important;
+@media only screen and (min-width: 340px) {
+  .card {
+    right: 24svh;
   }
 }
-
-@media only screen and (min-width: 360px) {
-  .chat-bar {
-    margin-top: 58px !important;
+@media only screen and (min-width: 350px) {
+  .card {
+    right: 30svh;
   }
 }
-
+@media only screen and (min-width: 385px) {
+  .card {
+    right: 25svh;
+  }
+}
 @media only screen and (min-width: 400px) {
-
   .row .row-cols-4 {
     width: 70%;
   }
-
   .rrss-title{
     margin-top: 100px;
   }
-
-  .chat-bar {
-    margin-top: 40px !important;
+  .card {
+    font-size: 14px;
+    right: 13rem;
   }
-
+  .box {
+    bottom: 15rem;
+  }
 }
-
 @media only screen and (min-width: 500px) {
     .chat-image {
       width: 90%;
     }   
-
     .collapse-card{
       left: 10svh;
     }
-
     .row .row-cols-4 {
       width: 50%;
     }
-
     .rrss-title{
       margin-top: 100px;
     }
-
+    .card {
+      font-size: 16px;
+      right: 30svh;
+      bottom: 18rem;
+    }
+    .scrollable {
+      width: 15rem;
+      height: 17rem;
+      overflow-y: auto; /* Desplazamiento vertical */
+    }
+    .inner-header-img{
+      height: 8vh;
+    }
 }
-
+@media only screen and (min-width: 620px) {
+  .card {
+    right: 48svh;
+  }
+}
 @media only screen and (min-width: 768px) {
   .chat-image {
     width: 70%;
   }   
-
   .row .row-cols-4 {
     width: 35%;
   }
+  .card {
+    font-size: 18px;
+    right: 20svh;
+    bottom: 25rem;
+  }
+  .scrollable {
+    width: 17rem;
+    height: 19rem;
+    overflow-y: auto; /* Desplazamiento vertical */
+  }
+  .inner-header-img{
+    width: 270px;
+  }
 }
-
+@media only screen and (min-width: 800px) {
+  .card {
+    right: 14svh;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .card {
+    right: 9svh;
+  }
+}
 @media only screen and (min-width: 992px) {
   .chat-image {
     width: 60%;
   }   
-
   .row .row-cols-4 {
     width: 26%;
   }
+  .card {
+    right: 14svh;
+  }
+  .inner-header-img{
+    height: 12vh;
+  }
+  
 }
-
 @media only screen and (min-width: 1200px) {
   .chat-image {
     width: 50%;
   }   
-
   .row .row-cols-4 {
     width: 20%;
+  }
+  .card {
+    font-size: 22px;
+    right: 40svh;
+    bottom: 26rem;
+  }
+  .box {
+    min-width: 20rem;
+  }
+  .scrollable {
+    width: 23rem;
+    height: 25rem;
+    overflow-y: auto; /* Desplazamiento vertical */
+  }
+  .chat-bar .col-auto{
+    margin-top: 6px;
+  }
+  .chat-bar input {
+    width: 15rem;
+    padding: 4px;
+  }
+  .chat-bar btn{
+    padding: 3px;
+  }
+  .inner-header-img{
+    width: 366px;
+    height: 22vh;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .card {
+    right: 35svh;
+  }
+  .inner-header-img{
+    height: 18vh;
   }
 }

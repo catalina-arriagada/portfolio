@@ -35,8 +35,15 @@ const VirtualChatOpened = () => {
     }
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handleSendMessage();
+    }
+  }
+
   return (
-    <Container className="box">
+    <Container className="box pb-3">
       <Row>
         <Col className="img-box">
           <header>
@@ -51,11 +58,12 @@ const VirtualChatOpened = () => {
         </Col>
       </Row>
 
-      <Row>
+      <Row className="chat-elements">
         <Col className="scrollable">
           <ListGroup>
             {messages.map((msg, index) => (
-              <Tab.Content key={index}>
+              <Tab.Content className="m-2" key={index}>
+                <span class="loader"></span>
                 <strong>{msg.sender}</strong> {msg.message}
                 <div className="text-muted" style={{ fontSize: '0.8em' }}>
                   {msg.timestamp}
@@ -64,22 +72,22 @@ const VirtualChatOpened = () => {
             ))}
           </ListGroup>
         </Col>
-      </Row>
-
-      <Row className="chat-bar">
-        <Col>
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Escribe un mensaje..."
-          />
-        </Col>
-        <Col xs="auto">
-          <btn onClick={handleSendMessage}>
-            Enviar
-          </btn>
-        </Col>
+        <div className="chat-bar">      
+          <Col>
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Escribe un mensaje..."
+            />
+          </Col>
+          <Col xs="auto">
+            <btn onClick={handleSendMessage}>
+              Enviar
+            </btn>
+          </Col>
+        </div>
       </Row>
     </Container>
   );
