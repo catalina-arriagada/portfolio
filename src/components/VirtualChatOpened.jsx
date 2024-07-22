@@ -1,6 +1,6 @@
 //chatwrapper
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Container,
   Row,
@@ -15,6 +15,8 @@ import moment from "moment"; // Instala moment.js para formatear las marcas de t
 const VirtualChatOpened = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const messagesEndRef = useRef(null);
 
   useEffect(() => {
     const initialMessage = {
@@ -23,15 +25,25 @@ const VirtualChatOpened = () => {
     setMessages([initialMessage]);
   }, []);
 
+  // useEffect para desplazarse al final de los mensajes cuando se actualiza
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+  
   const handleSendMessage = () => {
     if (input.trim()) {
+      setLoading(true);
       const newMessage = {
         sender: "Usuario: ",
         message: input,
         timestamp: moment().format("YYYY-MM-DD HH:mm:ss"),
       };
-      setMessages([...messages, newMessage]);
-      setInput("");
+      setTimeout(() => {
+        setMessages([...messages, newMessage]);
+        setInput('');
+        setLoading(false);
+      }, 400);
+        
     }
   };
 
@@ -63,15 +75,17 @@ const VirtualChatOpened = () => {
           <ListGroup>
             {messages.map((msg, index) => (
               <Tab.Content className="m-2" key={index}>
-                <span class="loader"></span>
                 <strong>{msg.sender}</strong> {msg.message}
                 <div className="text-muted" style={{ fontSize: '0.8em' }}>
                   {msg.timestamp}
                 </div>
               </Tab.Content>
             ))}
+            {loading && (<span className="loader"></span>)}
+            <div ref={messagesEndRef} />
           </ListGroup>
         </Col>
+        
         <div className="chat-bar">      
           <Col>
             <input
@@ -80,10 +94,11 @@ const VirtualChatOpened = () => {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Escribe un mensaje..."
+              disabled={loading}
             />
           </Col>
           <Col xs="auto">
-            <btn onClick={handleSendMessage}>
+            <btn onClick={handleSendMessage} disabled={loading}>
               Enviar
             </btn>
           </Col>
