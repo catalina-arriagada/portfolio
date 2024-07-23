@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Collapse from 'react-bootstrap/Collapse';
 import { Image } from 'react-bootstrap';
 import '../../styles/circle.css';
 import '../../styles/transition_text.css';
@@ -12,28 +10,42 @@ import '../../styles/transition_text.css';
 //Idea final: (dev cat girl) cada letra se mueve de manera q provoca darle click (son como letras personificadas con ojos, boca, etc) y al hacerlo aparece globo historieta que al tocarla se abre la imagen  
 
 function TransitionText() {
-  const [open, setOpen] = useState(false);
 
+    const states = [
+      {
+        text: `¡Hola!
+        Para comenzar, clickea aquí`,
+        src: './img/circle.png',
+        className: 'circle-img'
+      },
+      {
+          text: 'Bienvenidos a mi web!',
+          src: './img/circle.png',
+          className: 'circle-img'
+      },
+      {
+        text: 'Soy Dev Cat, una desarrolladora de Software.',
+        src: './img/circle.png',
+        className: 'circle-img'
+    },
+    ];
+
+    const changeStates = () => {
+        setCurrentIndex((currentIndex + 1) % states.length);
+    };
+    
+    const [currentIndex, setCurrentIndex] = useState(0);
+  
   return (
     <div>
       <Button
-        onClick={() => setOpen(!open)}
-        aria-expanded={open}
-        variant='light'
+        onClick={changeStates}
+        variant='none'
         className='button_transition_text'>
-        <Image className='circle-img' src="./img/circle.png" alt="globo" />
-        <h6 className='circle-title'>Hola! Soy Dev Cat!</h6>
+        <Image className= {states[currentIndex].className} src={states[currentIndex].src}  />
+        <h6 className='circle-title'>{states[currentIndex].text}</h6>
       </Button>
 
-      <div style={{ minHeight: '150px' }}>
-        <Collapse in={open} dimension="width">
-          <div id="example-collapse-text">
-            <Card body style={{ width: '400px' }}>
-                Mi nombre es Catalina, y soy desarrolladora de Software Chilena, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed repellendus possimus corrupti incidunt asperiores nemo quia eum laborum hic iure, soluta fugiat assumenda reprehenderit veniam minima voluptas! Tenetur, omnis aspernatur!
-            </Card>
-          </div>
-        </Collapse>
-      </div>
     </div>
   );
 }

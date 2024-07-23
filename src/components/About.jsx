@@ -2,7 +2,7 @@
 //Nombre y apellido, a que me dedico, resumen de mi experiencia y objetivos.
 
 import React from 'react';
-import { Image, Row, Container, Col } from 'react-bootstrap';
+import { Row, Container, Col } from 'react-bootstrap';
 import TransitionText from './aboutComponents/TransitionText';
 
 const About = () => {
@@ -10,14 +10,14 @@ const About = () => {
         <div className='row pt-4'>
             <h2 className='col display-6 text-center'>Catalina Arriagada (Dev Cat Girl)</h2>
             <p className="text-center mt-2"></p>
-            <Container className = 'text-center mt-3 bg-body-tertiary mb-4'>
+            <Container className = 'text-center mt-3 mb-4'>
                 <Row>
                     <Col>
-                        <Image src="./img/profile.jpg" alt="profile" fluid />
+                        {/* <Image src="./img/profile.jpg" alt="profile" fluid /> */}
+                        <TransitionText />
                     </Col>
                 </Row>
             </Container>
-            <TransitionText />
         </div>
     )
 }
