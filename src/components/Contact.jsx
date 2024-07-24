@@ -1,31 +1,15 @@
 import React from "react";
-import { Form, Col, Row, Button, Image } from "react-bootstrap";
-import InstaLogoButton from "./rrss/InstaLogo";
-import FaceLogoButton from "./rrss/FaceLogo";
-import LinkeLogoButton from "./rrss/LinkeLogo";
-import YoutLogoButton from "./rrss/YoutLogo";
+import { Form, Col, Button, Image } from "react-bootstrap";
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Collapse from "react-bootstrap/Collapse";
 import "../styles/contact.css";
 import VirtualChatOpened from "./VirtualChatOpened";
+import Footer from './Footer.jsx';
 
 //personalizar estilo caja rrss (color pastel, adornos)
 
 const Contact = () => {
-  const handleClickInsta = () => {
-    window.open("http://www.instagram.com");
-  };
-  const handleClickFace = () => {
-    window.open("http://www.facebook.com");
-  };
-  const handleClickLinkedin = () => {
-    window.open("http://www.linkedin.com");
-  };
-  const handleClickYoutube = () => {
-    window.open("http://www.youtube.com");
-  };
-
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
@@ -113,27 +97,7 @@ const Contact = () => {
           Enviar
         </Button>
       </Form>
-      <div className="rrss-div">
-        <h6 className="rrss-title">Redes sociales</h6>
-        <Row xs={4}>
-          <InstaLogoButton
-            imageInstaSource="./img/logoinsta192.png"
-            onClick={handleClickInsta}
-          />
-          <FaceLogoButton
-            imageFaceSource="./img/logofacebook192.png"
-            onClick={handleClickFace}
-          />
-          <LinkeLogoButton
-            imageLinkeSource="./img/logolinkedin192.png"
-            onClick={handleClickLinkedin}
-          />
-          <YoutLogoButton
-            imageYoutSource="./img/logoyoutube192.png"
-            onClick={handleClickYoutube}
-          />
-        </Row>
-      </div>
+
 
       <div className="chat-div">
         <Collapse in={open}>
@@ -156,6 +120,8 @@ const Contact = () => {
           />
         </Button>
       </div>
+
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,17 @@
+.footer {
+  width: 200px;
+}
+
+.rrss-btn {
+  cursor: pointer;
+}
+.rrss-image {
+  display: block;
+  height: auto;
+}
+
+@media only screen and (min-width: 200px){
+    .rrss-title{
+        margin-top: 100px;
+    }
+}

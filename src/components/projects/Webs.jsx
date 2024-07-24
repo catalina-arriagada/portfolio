@@ -1,11 +1,9 @@
 //proyectos web
 import React from "react";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import InvisibleButtonCard from '../projectsComponents/InvisibleButtonCard';
-import "../../styles/webs.css";
+import { Accordion, Card, Col, Row } from 'react-bootstrap';
+import InvisibleButtonCard from '../projectsComponents/InvisibleButtonCard.jsx';
+import Footer from '../Footer.jsx';
+import '../../styles/webs.css';
 
 const Webs = () => {
   const BestWebProjectsArray = [
@@ -13,7 +11,7 @@ const Webs = () => {
       Id: 0,
       Name: `Accordion Item #1`,
       Description: `Lorem ipsum dolor sit amet, consectetur.`,
-      Img: `../img/carr-1.jpg`,
+      Img: '../img/carr-1.jpg',
       Link: `https://www.google.com`,
     },
     {
@@ -75,7 +73,6 @@ const Webs = () => {
   ];
 
   return (
-    
     <div className="container pt-4">
       <h2 className='display-6 text-center pb-3'>Proyectos</h2>
       <Row xs={1} sm={2} lg={3} className="g-6 mb-5 mt-1">
@@ -87,7 +84,7 @@ const Webs = () => {
                 <Card.Title className="cardTitle">{Element.Name}</Card.Title>
                 <Card.Text className="cardText">{Element.Description}</Card.Text>
                 <InvisibleButtonCard onClick={() => window.open(Element.Link)} />
-              </Card.Body>
+               </Card.Body>
             </Card>
           </Col>
         ))}
@@ -100,9 +97,8 @@ const Webs = () => {
             </Accordion.Item>
         ))}
       </Accordion>
-        
+      <Footer />
     </div>
-    
   );
 };
 

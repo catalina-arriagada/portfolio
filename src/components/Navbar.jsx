@@ -4,7 +4,7 @@ import { Outlet, Link } from 'react-router-dom';
 const Navbar = () => {
     return(
         <header>
-            <div>
+            <>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="container-fluid">
                         <Link className="navbar-brand" to="/">Dev Cat Girl</Link>
@@ -24,7 +24,7 @@ const Navbar = () => {
                                         Proyectos     
                                     </Link>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><Link className="dropdown-item" to="/proyectos/web">Páginas Web</Link></li>
+                                        <li><Link className="dropdown-item" to="/web">Páginas Web</Link></li>
                                         {/*<li><Link className="dropdown-item" to="/proyectos/movil">Aplicaciones Android</Link></li>
                                         <li><hr className="dropdown-divider"/></li>
                                         <li><Link className="dropdown-item" to="/proyectos/software">Otros Softwares</Link></li>
@@ -40,7 +40,7 @@ const Navbar = () => {
                     </div>
                 </nav>
                 <Outlet />
-            </div>
+            </>
         </header>
         )
     }

@@ -9,11 +9,9 @@ const About = () => {
     return(
         <div className='row pt-4'>
             <h2 className='col display-6 text-center'>Catalina Arriagada (Dev Cat Girl)</h2>
-            <p className="text-center mt-2"></p>
             <Container className = 'text-center mt-3 mb-4'>
                 <Row>
                     <Col>
-                        {/* <Image src="./img/profile.jpg" alt="profile" fluid /> */}
                         <TransitionText />
                     </Col>
                 </Row>

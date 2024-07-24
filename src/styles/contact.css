@@ -1,7 +1,7 @@
 .btn {
   border: transparent !important;
 }
-.rrss-btn, .chat-btn {
+.chat-btn {
   cursor: pointer;
 }
 .chat-image {
@@ -9,10 +9,6 @@
 }
 .chat-image:hover {
   transform: scale(1.2); 
-}
-.rrss-image { 
-  display: block;
-  height: auto;
 }
 .img-box {
   padding: 0 !important;
@@ -76,9 +72,6 @@ div .card {
   }
   .row .row-cols-4 {
     width: 70%;
-  }
-  .rrss-title{
-    margin-top: 100px;
   }
   .chat-div {
     padding: 0 !important;
@@ -148,9 +141,6 @@ div .card {
   .row .row-cols-4 {
     width: 70%;
   }
-  .rrss-title{
-    margin-top: 100px;
-  }
   .card {
     font-size: 14px;
     right: 13rem;
@@ -168,9 +158,6 @@ div .card {
     }
     .row .row-cols-4 {
       width: 50%;
-    }
-    .rrss-title{
-      margin-top: 100px;
     }
     .card {
       font-size: 16px;

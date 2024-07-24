@@ -13,13 +13,12 @@ function App() {
             <div class= "container">
             <Routes>
                 <Route path='/' element={<Navbar />}>
-                  <Route path='/' element={<Carrousel />}></Route>
-                  <Route path='about' element={<About />}></Route>
-                  <Route path='contacto' element={<Contact />}></Route>
-                  <Route path='proyectos/web' element={<Webs />}></Route>
+                    <Route path='/' element={<Carrousel />}></Route>
+                    <Route path='about' element={<About />}></Route>
+                    <Route path='contacto' element={<Contact />}></Route>
+                    <Route path='web' element={<Webs />}></Route>
                 </Route>
             </Routes>    
-                  
             </div>
       </div>
   );

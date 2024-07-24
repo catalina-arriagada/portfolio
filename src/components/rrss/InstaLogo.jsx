@@ -1,14 +1,15 @@
 import React from 'react';
 import { Button, Image } from 'react-bootstrap';
-import '../../styles/contact.css';
+import '../../styles/footer.css';
 
 const InstaLogoButton = ({imageInstaSource, onClick }) => {
   return (
-        <Button className="rss-btn" variant='none' onClick={onClick}>
+        <Button className="rrss-btn" variant='none' onClick={onClick}>
             <Image className='rrss-image' src={imageInstaSource} alt="Instagram" fluid />
         </Button>
     );
 };
 
 export default InstaLogoButton;
-//style={{flex: '0 0 5%', maxWidth: '5%'}}
+
+//creo q div general tiene estilos predefinidos. Cambiarlos al css y ponerlos en footer.css
