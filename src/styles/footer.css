@@ -2,16 +2,25 @@
   width: 200px;
 }
 
-.rrss-btn {
+#yt-icon, #linke-icon, #ig-icon, #fb-icon{
   cursor: pointer;
 }
-.rrss-image {
-  display: block;
-  height: auto;
+
+#yt-icon{
+  color: #FF0000;
+}
+#linke-icon{
+  color: #0A66C2;
+}
+#fb-icon{
+  color: #0866FF;
 }
 
-@media only screen and (min-width: 200px){
-    .rrss-title{
-        margin-top: 100px;
-    }
-}
+
+
+
+
+
+
+
+
