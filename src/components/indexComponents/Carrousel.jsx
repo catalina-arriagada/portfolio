@@ -29,9 +29,10 @@ function Carrousel() {
     <div className="row">
       < Index />
       <Carousel sm>
+        
         {ImgArray.map((Element) => {
           return (
-            <Carousel.Item className='text-center mt-5 bg-body-tertiary'>
+            <Carousel.Item className='text-center mt-5'>
               <Image src={Element.Img} text={Element.Name} fluid/>
             </Carousel.Item>
           );

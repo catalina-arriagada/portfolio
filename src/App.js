@@ -5,6 +5,7 @@ import Navbar from './components/Navbar.jsx';
 import Carrousel from './components/indexComponents/Carrousel';
 import Contact from './components/Contact';
 import Webs from './components/projects/Webs.jsx';
+import Donations from './components/Donations.jsx';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
                     <Route path='about' element={<About />}></Route>
                     <Route path='contacto' element={<Contact />}></Route>
                     <Route path='web' element={<Webs />}></Route>
+                    <Route path='donaciones' element={<Donations />}></Route>
                 </Route>
             </Routes>    
             </div>

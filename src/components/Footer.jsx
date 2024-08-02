@@ -17,13 +17,10 @@ const Footer = () => {
   
   return (
     <div className="container">
-      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top border-dark">
         <div className="col-md-4 d-flex align-items-center">
-          <svg className="bi" width="30" height="24">
-            <use href="#bootstrap"></use>
-          </svg>
           <span className="mb-3 mb-md-0 text-body-secondary">
-            © 2024 Company, Inc
+            © 2024 Catalina Arriagada, Chile
           </span>
         </div>
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">

@@ -78,7 +78,7 @@ const Webs = () => {
       <Row xs={1} sm={2} lg={3} className="g-6 mb-5 mt-1">
         {BestWebProjectsArray.map((Element) => (
           <Col className="mr-3 mt-3" key={Element.Id}>
-            <Card className="card-full image p-1">
+            <Card className="card-full image bg-body-secondary">
               <Card.Img variant='top' src={Element.Img} fluid />
               <Card.Body className="cardBody">
                 <Card.Title className="cardTitle">{Element.Name}</Card.Title>
@@ -89,14 +89,14 @@ const Webs = () => {
           </Col>
         ))}
       </Row>
-      <Accordion defaultActiveKey="0" flush>
+      {/* <Accordion defaultActiveKey="0" flush>
         {WebProjectsArray.map((Element) => (
             <Accordion.Item eventKey={Element.Id}>
                 <Accordion.Header>{Element.Name}</Accordion.Header>
                 <Accordion.Body>{Element.Description}</Accordion.Body>
             </Accordion.Item>
         ))}
-      </Accordion>
+      </Accordion> */}
       <Footer />
     </div>
   );

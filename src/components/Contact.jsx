@@ -68,7 +68,8 @@ const Contact = () => {
             type="text"
             placeholder="Tu nombre"
             defaultValue=""
-            className="text-center"
+            className="text-center custom-input"
+            onChange={handleChange}
           />
         </Form.Group>
         <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
@@ -77,7 +78,7 @@ const Contact = () => {
             required
             type="email"
             placeholder="tuemail@gmail.com"
-            className="text-center"
+            className="text-center custom-input"
             value={email}
             onChange={handleChange}
           />
@@ -90,7 +91,7 @@ const Contact = () => {
             as="textarea"
             rows={3}
             placeholder="Escribe aquí tus sugerencias y propuestas"
-            className="text-center"
+            className="text-center custom-input"
           />
         </Form.Group>
         <Button className="mb-2" type="submit">

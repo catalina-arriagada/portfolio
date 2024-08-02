@@ -18,6 +18,14 @@ div .card {
  width: 0px;
  height: 0px;
 }
+.custom-input{
+  background-color: rgba(237, 235, 235, 0.649) !important;
+}
+.custom-input:focus{
+  box-shadow: none !important;
+  background-color: white !important;
+  border:  rgba(237, 235, 235, 0.649);
+}
 /*spinner*/
 .loader, .loader:before, .loader:after {
   border-radius: 50%;
@@ -68,7 +76,7 @@ div .card {
     padding-right: 0 !important;
   }  
   .inner-header-img{
-    height: 6vh;
+    height: 10vh;
   }
   .row .row-cols-4 {
     width: 70%;
@@ -84,8 +92,8 @@ div .card {
   }
   .card {
     position: relative;
-    bottom: 16rem;
     right: 31svh;
+    top: 10rem;
   }
   .box {
     min-width: 12rem;
@@ -95,7 +103,7 @@ div .card {
   .scrollable {
     font-size: 12px;
     display: flex;
-    height: 14rem;/* Altura fija */
+    height: 8rem;/* Altura fija */
     overflow-y: auto; /* Desplazamiento vertical */
   }
   .inner-header-img{
@@ -125,16 +133,24 @@ div .card {
 @media only screen and (min-width: 340px) {
   .card {
     right: 24svh;
+    top: 9rem;
   }
 }
 @media only screen and (min-width: 350px) {
   .card {
-    right: 30svh;
+    right: 32svh;
+    top: 10.5rem;
+  }
+}
+@media only screen and (min-width: 370px) {
+  .card {
+    right: 32svh;
   }
 }
 @media only screen and (min-width: 385px) {
   .card {
     right: 25svh;
+    top: 9.5rem;
   }
 }
 @media only screen and (min-width: 400px) {
@@ -144,9 +160,7 @@ div .card {
   .card {
     font-size: 14px;
     right: 13rem;
-  }
-  .box {
-    bottom: 15rem;
+    top: 8.6rem;
   }
 }
 @media only screen and (min-width: 500px) {
@@ -162,20 +176,20 @@ div .card {
     .card {
       font-size: 16px;
       right: 30svh;
-      bottom: 18rem;
+      top: 8rem;
     }
     .scrollable {
       width: 15rem;
-      height: 17rem;
-      overflow-y: auto; /* Desplazamiento vertical */
+      height: 8rem;
     }
     .inner-header-img{
-      height: 8vh;
+      height: 15vh;
     }
 }
 @media only screen and (min-width: 620px) {
   .card {
     right: 48svh;
+    top: 11rem;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -188,25 +202,32 @@ div .card {
   .card {
     font-size: 18px;
     right: 20svh;
-    bottom: 25rem;
+    top: 8.5rem;
   }
   .scrollable {
     width: 17rem;
-    height: 19rem;
-    overflow-y: auto; /* Desplazamiento vertical */
+    height: 8rem;
   }
   .inner-header-img{
     width: 270px;
+    height: 6rem;
   }
 }
 @media only screen and (min-width: 800px) {
   .card {
     right: 14svh;
+    top: 8rem;
+  }
+}
+@media only screen and (min-width: 850px) {
+  .card {
+    right: 12.5svh;
   }
 }
 @media only screen and (min-width: 900px) {
   .card {
     right: 9svh;
+    top: 7.6rem;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -217,12 +238,13 @@ div .card {
     width: 26%;
   }
   .card {
-    right: 14svh;
+    right: 15svh;
+    top: 7.2rem;
   }
   .inner-header-img{
-    height: 12vh;
+    height: 8vh;
   }
-  
+
 }
 @media only screen and (min-width: 1200px) {
   .chat-image {
@@ -234,15 +256,14 @@ div .card {
   .card {
     font-size: 22px;
     right: 40svh;
-    bottom: 26rem;
+    top: 3rem;
   }
   .box {
     min-width: 20rem;
   }
   .scrollable {
     width: 23rem;
-    height: 25rem;
-    overflow-y: auto; /* Desplazamiento vertical */
+    height: 10rem;
   }
   .chat-bar .col-auto{
     margin-top: 6px;
@@ -256,7 +277,7 @@ div .card {
   }
   .inner-header-img{
     width: 366px;
-    height: 22vh;
+    height: 20vh;
   }
 }
 @media only screen and (min-width: 1400px) {
@@ -264,6 +285,6 @@ div .card {
     right: 35svh;
   }
   .inner-header-img{
-    height: 18vh;
+    height: 15vh;
   }
 }

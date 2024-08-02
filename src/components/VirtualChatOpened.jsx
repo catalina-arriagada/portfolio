@@ -74,9 +74,9 @@ const VirtualChatOpened = () => {
         <Col className="scrollable">
           <ListGroup>
             {messages.map((msg, index) => (
-              <Tab.Content className="m-2" key={index}>
+              <Tab.Content className="mt-1" key={index}>
                 <strong>{msg.sender}</strong> {msg.message}
-                <div className="text-muted" style={{ fontSize: '0.8em' }}>
+                <div className="text-muted mb-2" style={{ fontSize: '0.8em' }}>
                   {msg.timestamp}
                 </div>
               </Tab.Content>
