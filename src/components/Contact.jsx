@@ -1,10 +1,7 @@
 import React from "react";
-import { Form, Col, Button, Image } from "react-bootstrap";
+import { Form, Col, Button} from "react-bootstrap";
 import { useState } from "react";
-import Card from "react-bootstrap/Card";
-import Collapse from "react-bootstrap/Collapse";
 import "../styles/contact.css";
-import VirtualChatOpened from "./VirtualChatOpened";
 import Footer from './Footer.jsx';
 
 //personalizar estilo caja rrss (color pastel, adornos)
@@ -28,7 +25,6 @@ const Contact = () => {
     }
   };
 
-  const [open, setOpen] = useState(false); //virtual chat
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (e) => {
@@ -98,29 +94,6 @@ const Contact = () => {
           Enviar
         </Button>
       </Form>
-
-
-      <div className="chat-div">
-        <Collapse in={open}>
-          <div className="collapse-card">
-            <Card>
-              <VirtualChatOpened />
-            </Card>
-          </div>
-        </Collapse>
-        <Button
-          className="chat-btn col-1"
-          variant="none"
-          onClick={() => setOpen(!open)}
-          aria-expanded={open}
-        >
-          <Image
-            className="chat-image"
-            src="./img/chat-an.png"
-            alt="Chat virtual"
-          />
-        </Button>
-      </div>
 
       <Footer />
     </div>
