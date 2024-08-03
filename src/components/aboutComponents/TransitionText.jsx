@@ -12,21 +12,21 @@ function TransitionText() {
         Para comenzar, clickea aquí`,
       srcText: "./img/circle.png",
       classNameText: "circle-img",
-      classNameCaracter: '',
+      classNameCaracter: 'caracter-img',
       srcCaracter: './img/about1.png',
     },
     {
       text: "Bienvenidos a mi web!",
       srcText: "./img/circle.png",
       classNameText: "circle-img",
-      classNameCaracter: '',
+      classNameCaracter: 'caracter-img',
       srcCaracter: './img/about2.png',
     },
     {
       text: "Soy Dev Cat, una desarrolladora de Software.",
       srcText: "./img/circle.png",
       classNameText: "circle-img",
-      classNameCaracter: '',
+      classNameCaracter: 'caracter-img',
       srcCaracter: './img/about3.png',
     },
   ];
@@ -38,7 +38,7 @@ function TransitionText() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <>
+    <div className="container">
       <Button
         onClick={changeStates}
         variant="none"
@@ -50,14 +50,15 @@ function TransitionText() {
         />
         <h6 className="circle-title">{states[currentIndex].text}</h6>
       </Button>
-
-      <Image
-          className={states[currentIndex].classNameCaracter}
-          src={states[currentIndex].srcCaracter}
-        />
+      <div>
+        <Image
+            className={states[currentIndex].classNameCaracter}
+            src={states[currentIndex].srcCaracter}
+          />
+      </div>
 
       <Footer />
-    </>
+    </div>
   );
 }
 

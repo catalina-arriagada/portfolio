@@ -1,5 +1,12 @@
+.container {
+    display: grid;
+}
+
 .button_transition_text {
     transition: .2s linear;
+    grid-column: 1;
+    font-size: 20px;
+    background-color: white;
 }
 
 .button_transition_text:hover {
@@ -9,7 +16,14 @@
 .circle-title{
     position: relative;
     bottom: 70px;
-    color: rgb(51, 10, 255);
+    color: rgb(147, 121, 97);
     font-size: 8px;
-    white-space: pre-line; /*toma los espacios dentro de las backticks``*/
+    /*white-space: pre-line; /*toma los espacios dentro de las backticks``*/
+}
+
+.caracter-img{
+    width: 3rem;
+    height: 3em;
+    grid-column: 1;
+    place-items: center; 
 }
