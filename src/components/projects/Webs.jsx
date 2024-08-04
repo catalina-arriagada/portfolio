@@ -1,6 +1,6 @@
 //proyectos web
 import React from "react";
-import { Accordion, Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import InvisibleButtonCard from '../projectsComponents/InvisibleButtonCard.jsx';
 import Footer from '../Footer.jsx';
 import '../../styles/webs.css';
@@ -11,65 +11,31 @@ const Webs = () => {
       Id: 0,
       Name: `Accordion Item #1`,
       Description: `Lorem ipsum dolor sit amet, consectetur.`,
-      Img: '../img/carr-1.jpg',
-      Link: `https://www.google.com`,
+      Img: '../img/carr-1.png',
+      Link: `https://primerproyectoweb-1.netlify.app/`,
     },
     {
       Id: 1,
       Name: `Accordion Item #2`,
       Description: `Lorem ipsum dolor sit amet.`,
-      Img: `../img/carr-2.jpg`,
-      Link: `https://www.google.com`,
+      Img: `../img/carr-2.png`,
+      Link: `https://segundoproyectoweb2.netlify.app/`,
     },
     {
       Id: 2,
       Name: `Accordion Item #3`,
       Description: `Lorem ipsum dolor sit.`,
-      Img: `../img/carr-3.jpg`,
-      Link: `https://www.google.com`,
+      Img: `../img/carr-3.png`,
+      Link: `https://primer-proyecto-vida.netlify.app/`,
     },
-  ];
-
-  const WebProjectsArray = [
     {
-        Id: 4,
-        Name: `Accordion Item #5`,
-        Description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                          aliquip ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                          culpa qui officia deserunt mollit anim id est laborum.`,
-        Img: ``,
-        Link: ``,
-      },
-      {
-        Id: 5,
-        Name: `Accordion Item #6`,
-        Description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                          aliquip ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                          culpa qui officia deserunt mollit anim id est laborum.`,
-        Img: ``,
-        Link: ``,
-      },
-      {
-        Id: 6,
-        Name: `Accordion Item #7`,
-        Description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                          aliquip ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                          culpa qui officia deserunt mollit anim id est laborum.`,
-        Img: ``,
-        Link: ``,
-      },
+      Id: 3,
+      Name: `Accordion Item #3`,
+      Description: `Lorem ipsum dolor sit.`,
+      Img: `../img/pag-4.png`,
+      Link: `https://tercerproyectoweb3.netlify.app/`,
+    },
+    
   ];
 
   return (
@@ -78,7 +44,7 @@ const Webs = () => {
       <Row xs={1} sm={2} lg={3} className="g-6 mb-5 mt-1">
         {BestWebProjectsArray.map((Element) => (
           <Col className="mr-3 mt-3" key={Element.Id}>
-            <Card className="card-full image bg-body-secondary">
+            <Card className="card-full image bg-body-secondary p-1">
               <Card.Img variant='top' src={Element.Img} fluid />
               <Card.Body className="cardBody">
                 <Card.Title className="cardTitle">{Element.Name}</Card.Title>
@@ -89,14 +55,6 @@ const Webs = () => {
           </Col>
         ))}
       </Row>
-      {/* <Accordion defaultActiveKey="0" flush>
-        {WebProjectsArray.map((Element) => (
-            <Accordion.Item eventKey={Element.Id}>
-                <Accordion.Header>{Element.Name}</Accordion.Header>
-                <Accordion.Body>{Element.Description}</Accordion.Body>
-            </Accordion.Item>
-        ))}
-      </Accordion> */}
       <Footer />
     </div>
   );

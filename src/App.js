@@ -17,7 +17,7 @@ function App() {
                     <Route path='/' element={<Carrousel />}></Route>
                     <Route path='about' element={<About />}></Route>
                     <Route path='contacto' element={<Contact />}></Route>
-                    <Route path='web' element={<Webs />}></Route>
+                    <Route path='proyectos' element={<Webs />}></Route>
                     <Route path='donaciones' element={<Donations />}></Route>
                 </Route>
             </Routes>    

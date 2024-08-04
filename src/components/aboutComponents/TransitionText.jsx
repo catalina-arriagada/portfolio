@@ -10,24 +10,76 @@ function TransitionText() {
     {
       text: `¡Hola!
         Para comenzar, clickea aquí`,
-      srcText: "./img/circle.png",
-      classNameText: "circle-img",
+      textEng: `Hi there! 
+      I'm a Junior Developer`,
       classNameCaracter: 'caracter-img',
-      srcCaracter: './img/about1.png',
+      srcCaracter: './img/profile2.jpg',
     },
     {
       text: "Bienvenidos a mi web!",
-      srcText: "./img/circle.png",
-      classNameText: "circle-img",
+      textEng: `Welcome to my web!`,
       classNameCaracter: 'caracter-img',
-      srcCaracter: './img/about2.png',
+      srcCaracter: './img/profile3.jpg',
     },
     {
       text: "Soy Dev Cat, una desarrolladora de Software.",
-      srcText: "./img/circle.png",
-      classNameText: "circle-img",
+      textEng: `Hi there! I'm a Junior Developer`,
       classNameCaracter: 'caracter-img',
-      srcCaracter: './img/about3.png',
+      srcCaracter: './img/profile1.png',
+    },
+    {
+      text: "Soy Dev Cat, una desarrolladora de Software.",
+      textEng: `Hi there! I'm a Junior Developer`,
+      classNameCaracter: 'caracter-img',
+      srcCaracter: './img/profile4.png',
+    },
+    {
+      text: "Soy Dev Cat, una desarrolladora de Software.",
+      textEng: `Hi there! I'm a Junior Developer`,
+      classNameCaracter: 'caracter-img',
+      srcCaracter: './img/profile5.png',
+    },
+    {
+      text: "Soy Dev Cat, una desarrolladora de Software.",
+      textEng: `Hi there! I'm a Junior Developer`,
+      classNameCaracter: 'caracter-img',
+      srcCaracter: './img/profile6.png',
+    },
+    {
+      text: "Soy Dev Cat, una desarrolladora de Software.",
+      textEng: `Hi there! I'm a Junior Developer`,
+      classNameCaracter: 'caracter-img',
+      srcCaracter: './img/profile7.png',
+    },
+    {
+      text: "Soy Dev Cat, una desarrolladora de Software.",
+      textEng: `Hi there! I'm a Junior Developer`,
+      classNameCaracter: 'caracter-img',
+      srcCaracter: './img/profile8.png',
+    },
+    {
+      text: "Soy Dev Cat, una desarrolladora de Software.",
+      textEng: `Hi there! I'm a Junior Developer`,
+      classNameCaracter: 'caracter-img',
+      srcCaracter: './img/profile9.png',
+    },
+    {
+      text: "Soy Dev Cat, una desarrolladora de Software.",
+      textEng: `Hi there! I'm a Junior Developer`,
+      classNameCaracter: 'caracter-img',
+      srcCaracter: './img/profile10.png',
+    },
+    {
+      text: "Soy Dev Cat, una desarrolladora de Software.",
+      textEng: `Hi there! I'm a Junior Developer`,
+      classNameCaracter: 'caracter-img',
+      srcCaracter: './img/profile11.png',
+    },
+    {
+      text: "Soy Dev Cat, una desarrolladora de Software.",
+      textEng: `Hi there! I'm a Junior Developer`,
+      classNameCaracter: 'caracter-img',
+      srcCaracter: './img/profile12.png',
     },
   ];
 
@@ -39,22 +91,23 @@ function TransitionText() {
 
   return (
     <div className="container">
-      <Button
-        onClick={changeStates}
-        variant="none"
-        className="button_transition_text"
-      >
-        <Image
-          className={states[currentIndex].classNameText}
-          src={states[currentIndex].srcText}
-        />
-        <h6 className="circle-title">{states[currentIndex].text}</h6>
-      </Button>
-      <div>
-        <Image
+      <div className="m-4">
+          <Button
+            onClick={changeStates}
+            variant="none"
+            className="d-flex justify-content-between align-items-center w-50 button_transition_text"
+          >
+          <p className="circle-title">{states[currentIndex].text}</p>
+          <p className="circle-title">{states[currentIndex].textEng}</p>
+        
+          </Button>
+      
+       <div>
+          <Image
             className={states[currentIndex].classNameCaracter}
             src={states[currentIndex].srcCaracter}
           />
+       </div>
       </div>
 
       <Footer />

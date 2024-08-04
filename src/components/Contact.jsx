@@ -19,7 +19,7 @@ const Contact = () => {
   const handleChange = (e) => {
     setEmail(e.target.value);
     if (!validateEmail(e.target.value)) {
-      setError("Email no es válido");
+      setError("Email no es válidoo");
     } else {
       setError("");
     }
@@ -65,7 +65,6 @@ const Contact = () => {
             placeholder="Tu nombre"
             defaultValue=""
             className="text-center custom-input"
-            onChange={handleChange}
           />
         </Form.Group>
         <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">

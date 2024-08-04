@@ -1,12 +1,8 @@
-.container {
-    display: grid;
-}
-
 .button_transition_text {
+    margin-left: 15em;
     transition: .2s linear;
-    grid-column: 1;
-    font-size: 20px;
-    background-color: white;
+    font-size: 30px;
+    height: 6em;
 }
 
 .button_transition_text:hover {
@@ -14,16 +10,14 @@
   }
 
 .circle-title{
-    position: relative;
-    bottom: 70px;
     color: rgb(147, 121, 97);
-    font-size: 8px;
-    /*white-space: pre-line; /*toma los espacios dentro de las backticks``*/
+    font-size: 1em;
+    white-space: pre-line; /*toma los espacios dentro de las backticks``*/
 }
 
 .caracter-img{
-    width: 3rem;
-    height: 3em;
-    grid-column: 1;
-    place-items: center; 
+    width: 18rem;
+    height: 18em;
+    place-items: center;
 }
+

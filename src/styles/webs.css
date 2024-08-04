@@ -2,7 +2,6 @@
     position: absolute;
     transition: transform .2s; 
     margin: 0 auto;
-    
 }
 
 .image:hover{

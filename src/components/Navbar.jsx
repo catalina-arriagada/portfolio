@@ -17,19 +17,10 @@ const Navbar = () => {
                                     <Link className="nav-link" aria-current="page" to="/about">Sobre mí</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/contacto">Contacto</Link>
+                                    <Link className="nav-link" aria-current="page" to="/proyectos">Proyectos</Link>
                                 </li>
-                                <li className="nav-item dropdown">
-                                    <Link className="nav-link dropdown-toggle" to="/proyectos" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Proyectos     
-                                    </Link>
-                                    <ul className="dropdown-menu bg-body-secondary" aria-labelledby="navbarDropdown">
-                                        <li><Link className="dropdown-item bg-body-secondary" to="/web">Páginas Web</Link></li>
-                                        {/*<li><Link className="dropdown-item" to="/proyectos/movil">Aplicaciones Android</Link></li>
-                                        <li><hr className="dropdown-divider"/></li>
-                                        <li><Link className="dropdown-item" to="/proyectos/software">Otros Softwares</Link></li>
-                                        */}
-                                    </ul>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/contacto">Contacto</Link>
                                 </li>
                             </ul>
                             <form className="d-flex">

@@ -7,20 +7,21 @@ import '../../styles/carousel.css';
 //cada imagen del carrusel respresenta marca personal
 function Carrousel() {
 
+  //poner imagenes de proyectos mas destacados
   const ImgArray = [
     {
       Id: 0,
-      Img: "./img/carr-1.jpg",
+      Img: "./img/carr-1.png",
       Name: "First slide"
     },
     {
       Id: 1,
-      Img: "./img/carr-2.jpg",
+      Img: "./img/carr-2.png",
       Name: "Second slide"
     },
     {
       Id: 2,
-      Img: "./img/carr-3.jpg",
+      Img: "./img/carr-3.png",
       Name: "Third slide"
     }
   ];
