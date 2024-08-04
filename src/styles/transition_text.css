@@ -1,12 +1,13 @@
 .button_transition_text {
-    margin-left: 15em;
-    transition: .2s linear;
+    width: 50rem;
+    margin-left: 11em;
+    transition: .3s linear;
     font-size: 30px;
-    height: 6em;
+    height: 8em;
 }
 
 .button_transition_text:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 
 .circle-title{

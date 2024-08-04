@@ -40,7 +40,7 @@ const Webs = () => {
 
   return (
     <div className="container pt-4">
-      <h2 className='display-6 text-center pb-3'>Proyectos</h2>
+      <h2 className='display-6 text-center pb-3'>Projects</h2>
       <Row xs={1} sm={2} lg={3} className="g-6 mb-5 mt-1">
         {BestWebProjectsArray.map((Element) => (
           <Col className="mr-3 mt-3" key={Element.Id}>

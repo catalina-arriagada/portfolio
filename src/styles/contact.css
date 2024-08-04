@@ -8,3 +8,15 @@
   box-shadow: none !important;
   border:  rgba(168, 164, 164, 0.649);
 }
+
+/* .form-control {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+} */
+
+/*evitar que salga verde cuando hay espacios en el nombre, mensaje*/
+.form-control, .is-valid, .was-validated .form-control:valid {
+  border-color: transparent !important;
+  background-size: 0 !important;
+}

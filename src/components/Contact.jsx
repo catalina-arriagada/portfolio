@@ -7,36 +7,157 @@ import Footer from './Footer.jsx';
 //personalizar estilo caja rrss (color pastel, adornos)
 
 const Contact = () => {
-  const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
+  const [mensaje, setMensaje] = useState("");
 
-  const validateEmail = (email) => {
-    // Expresión regular para validar el correo electrónico
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
+  // Definir los límites de caracteres
+  const maxNombreLength = 30;
+  const maxEmailLength = 30;
+  const maxMensajeLength = 310;
+
+  // Definir minimo de caracteres
+  const minNombreLength = 3;
+  const minEmailLength = 5;
+  const minMensajeLength = 5;
+
+  // Validar
+  const validateNombre = (nombre) => {
+    // Asegurar que nombre no sea undefined y trim para limpiar espacios
+    nombre = nombre?.trim() || "";
+
+    // Verificar primero si el nombre excede el límite de caracteres
+    if (nombre.length > maxNombreLength) {
+      setError(`Nombre no debe exceder ${maxNombreLength} caracteres`);
+      return false;
+    }
+    // Verificar primero si el nombre no alcanza el minimo de caracteres
+    if (nombre.length < minNombreLength) {
+      setError(`Nombre debe contener un mínimo de ${minNombreLength} caracteres`);
+      return false;
+    }
+
+    // Verifica caracteres no permitidos
+    const forbiddenCharsRegex = /[@#\$%\^&\*\(\)_\+\-=\[\]{};':"\\|,.<>\/?]+/;
+    if (forbiddenCharsRegex.test(nombre)) {
+      setError("Nombre contiene caracteres no permitidos");
+      return false;
+    }
+
+    // Verifica si el nombre contiene números
+    const containsNumbersRegex = /\d/;
+    if (containsNumbersRegex.test(nombre)) {
+      setError("Nombre no debe contener números");
+      return false;
+    }
+
+    // Verificar si el nombre está vacío
+    if (nombre.trim().length < 0) {
+      setError("Nombre no debe estar vacío");
+      return false;
+    }
+
+    return true;
+    
   };
 
-  const handleChange = (e) => {
-    setEmail(e.target.value);
-    if (!validateEmail(e.target.value)) {
-      setError("Email no es válidoo");
-    } else {
-      setError("");
+  const validateEmail = (email) => {
+    email = email?.trim() || "";
+
+    if (email.length > maxEmailLength) {
+      setError(`Email no debe exceder ${maxEmailLength} caracteres`);
+      return false;
+    }
+    // Expresión regular para validar el correo electrónico
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regex.test(email)) {
+      setError("Email no es válido");
+      return false;
+    }
+
+    // Verificar primero si el nombre no alcanza el minimo de caracteres
+    if (email.length < minEmailLength) {
+      setError(`Email debe contener un mínimo de ${minEmailLength} caracteres`);
+      return false;
+    }
+
+    return true;
+  };
+
+  const validateMensaje = (mensaje) => {
+    mensaje = mensaje?.trim() || "";
+
+    if (mensaje.length > maxMensajeLength) {
+      setError(`Mensaje no debe exceder ${maxMensajeLength} caracteres`);
+      return false;
+    }
+
+    const forbiddenCharsRegex = /[#\$%\^&\*\(\)\+\=\[\]{};':"\\|,<>\/]+/;
+    if (forbiddenCharsRegex.test(mensaje)) {
+      setError("Mensaje contiene caracteres no permitidos");
+      return false;
+    }
+
+    if (mensaje.length < minMensajeLength) {
+      setError(`Mensaje debe contener un mínimo de ${minMensajeLength} caracteres`);
+      return false;
+    }
+
+    if (mensaje.trim().length < 0) {
+      setError("Mensaje no debe estar vacío");
+      return false;
+    }
+    return true;
+  };
+
+
+  // Acciones una vez se ha validado
+  const handleChangeNombre = (e) => {
+    const nuevoNombre = e.target.value;
+    setNombre(nuevoNombre);
+
+    if (validateNombre(nuevoNombre)) {
+      setError(""); // Limpia el error si el nombre es válido
     }
   };
 
+  const handleChangeEmail = (e) => {
+    const nuevoEmail = e.target.value;
+    setEmail(nuevoEmail);
+
+    if (validateEmail(nuevoEmail)) {
+      setError(""); // Limpia el error si el email es válido
+    }
+  };
+
+  const handleChangeMensaje = (e) => {
+    const nuevoMensaje = e.target.value;
+    setMensaje(nuevoMensaje);
+
+    if (validateMensaje(nuevoMensaje)) {
+      setError(""); // Limpia el error si el email es válido
+    }
+  };
+
+  // Acciones una vez se ha hecho click en enviar submit
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (e) => {
-    const form = e.currentTarget;
-    if (form.checkValidity() === false) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    if (validateEmail(email)) {
-      //alert('Email es válido');
+     const form = e.currentTarget;
+     if (form.checkValidity() === false) {
+       e.stopPropagation();
+     }
+     e.preventDefault();
+    if (validateNombre(nombre) && validateEmail(email) && validateMensaje(mensaje)) {
+      alert("Formulario enviado con éxito");
+      // Limpia los campos del formulario
+      setNombre("");
+      setEmail("");
+      setMensaje("");
+      setError(""); // Limpia los mensajes de error también si es necesario
     } else {
-      setError("Email no es válido");
+      setError("Por favor, corrige los errores antes de enviar.");
     }
 
     setValidated(true);
@@ -44,7 +165,7 @@ const Contact = () => {
 
   return (
     <div className="row p-4">
-      <h2 className="display-6 text-center">Contacto</h2>
+      <h2 className="display-6 text-center">Contact</h2>
       <Form
         xs={3}
         className="form-contact text-center mt-5 col"
@@ -62,9 +183,11 @@ const Contact = () => {
           <Form.Control
             required
             type="text"
+            value={nombre}
             placeholder="Tu nombre"
             defaultValue=""
             className="text-center custom-input"
+            onChange={handleChangeNombre}
           />
         </Form.Group>
         <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
@@ -75,20 +198,22 @@ const Contact = () => {
             placeholder="tuemail@gmail.com"
             className="text-center custom-input"
             value={email}
-            onChange={handleChange}
+            onChange={handleChangeEmail}
           />
         </Form.Group>
-        {error && <p style={{ color: "red" }}>{error}</p>}
         <Form.Group className="mb-4" controlId="exampleForm.ControlTextarea1">
           <Form.Label>Mensaje</Form.Label>
           <Form.Control
             required
             as="textarea"
             rows={3}
+            value={mensaje}
             placeholder="Escribe aquí tus sugerencias y propuestas"
             className="text-center custom-input"
+            onChange={handleChangeMensaje}
           />
         </Form.Group>
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <Button className="mb-2" type="submit">
           Enviar
         </Button>

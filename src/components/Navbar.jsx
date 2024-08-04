@@ -14,19 +14,19 @@ const Navbar = () => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <Link className="nav-link" aria-current="page" to="/about">Sobre mí</Link>
+                                    <Link className="nav-link" aria-current="page" to="/about">About</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" aria-current="page" to="/proyectos">Proyectos</Link>
+                                    <Link className="nav-link" aria-current="page" to="/proyectos">Projects</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/contacto">Contacto</Link>
+                                    <Link className="nav-link" to="/contacto">Contact</Link>
                                 </li>
                             </ul>
                             <form className="d-flex">
                                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li className="nav-item">
-                                        <Link className="nav-link active" aria-current="page" to="/donaciones">Donaciones</Link>
+                                        <Link className="nav-link active" aria-current="page" to="/donaciones">Donations</Link>
                                     </li>
                                 </ul>
                             </form>
