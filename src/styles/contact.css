@@ -1,22 +1,28 @@
-.btn {
+ .btn {
   border: transparent !important;
-}
+} 
 .custom-input{
   background-color: rgba(237, 235, 235, 0.649) !important;
 }
 .custom-input:focus{
   box-shadow: none !important;
   border:  rgba(168, 164, 164, 0.649);
-}
+} 
 
-/* .form-control {
+ .form-control {
   border: none;
   background-color: transparent;
   box-shadow: none;
-} */
+} 
 
 /*evitar que salga verde cuando hay espacios en el nombre, mensaje*/
 .form-control, .is-valid, .was-validated .form-control:valid {
   border-color: transparent !important;
   background-size: 0 !important;
 }
+
+.invalid {
+  border-color: red;
+  box-shadow: 0 0 5px red;
+}
+

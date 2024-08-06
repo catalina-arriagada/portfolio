@@ -12,6 +12,10 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [mensaje, setMensaje] = useState("");
 
+  const [isNombreValid, setIsNombreValid] = useState(true); // Estado para validez del nombre
+  const [isEmailValid, setIsEmailValid] = useState(true); // Estado para validez del email
+  const [isMensajeValid, setIsMensajeValid] = useState(true); // Estado para validez del mensaje
+
   // Definir los límites de caracteres
   const maxNombreLength = 30;
   const maxEmailLength = 30;
@@ -21,6 +25,7 @@ const Contact = () => {
   const minNombreLength = 3;
   const minEmailLength = 5;
   const minMensajeLength = 5;
+
 
   // Validar
   const validateNombre = (nombre) => {
@@ -89,6 +94,7 @@ const Contact = () => {
     mensaje = mensaje?.trim() || "";
 
     if (mensaje.length > maxMensajeLength) {
+
       setError(`Mensaje no debe exceder ${maxMensajeLength} caracteres`);
       return false;
     }
@@ -111,21 +117,20 @@ const Contact = () => {
     return true;
   };
 
+  
 
-  // Acciones una vez se ha validado
+// Acciones una vez se ha validado
   const handleChangeNombre = (e) => {
     const nuevoNombre = e.target.value;
     setNombre(nuevoNombre);
-
     if (validateNombre(nuevoNombre)) {
       setError(""); // Limpia el error si el nombre es válido
-    }
+    } 
   };
 
   const handleChangeEmail = (e) => {
     const nuevoEmail = e.target.value;
     setEmail(nuevoEmail);
-
     if (validateEmail(nuevoEmail)) {
       setError(""); // Limpia el error si el email es válido
     }
@@ -134,7 +139,6 @@ const Contact = () => {
   const handleChangeMensaje = (e) => {
     const nuevoMensaje = e.target.value;
     setMensaje(nuevoMensaje);
-
     if (validateMensaje(nuevoMensaje)) {
       setError(""); // Limpia el error si el email es válido
     }
@@ -149,6 +153,15 @@ const Contact = () => {
        e.stopPropagation();
      }
      e.preventDefault();
+
+     // Realiza las validaciones y establece el estado de validez de los campos
+    const isNombreValido = validateNombre(nombre);
+    const isEmailValido = validateEmail(email);
+    const isMensajeValido = validateMensaje(mensaje);
+    setIsNombreValid(isNombreValido); // Actualiza el estado de validez del nombre
+    setIsEmailValid(isEmailValido); // Actualiza el estado de validez del email
+    setIsMensajeValid(isMensajeValido); // Actualiza el estado de validez del mensaje
+
     if (validateNombre(nombre) && validateEmail(email) && validateMensaje(mensaje)) {
       alert("Formulario enviado con éxito");
       // Limpia los campos del formulario
@@ -156,6 +169,7 @@ const Contact = () => {
       setEmail("");
       setMensaje("");
       setError(""); // Limpia los mensajes de error también si es necesario
+      setValidated(false); // Resetea el estado de validación
     } else {
       setError("Por favor, corrige los errores antes de enviar.");
     }
@@ -186,7 +200,7 @@ const Contact = () => {
             value={nombre}
             placeholder="Tu nombre"
             defaultValue=""
-            className="text-center custom-input"
+            className={`text-center custom-input ${validated && !isNombreValid ? 'invalid' : ''}`} // Añade clase 'invalid' si no es válido después del envío
             onChange={handleChangeNombre}
           />
         </Form.Group>
@@ -196,7 +210,7 @@ const Contact = () => {
             required
             type="email"
             placeholder="tuemail@gmail.com"
-            className="text-center custom-input"
+            className={`text-center custom-input ${validated && !isEmailValid ? 'invalid' : ''}`}
             value={email}
             onChange={handleChangeEmail}
           />
@@ -209,7 +223,7 @@ const Contact = () => {
             rows={3}
             value={mensaje}
             placeholder="Escribe aquí tus sugerencias y propuestas"
-            className="text-center custom-input"
+            className={`text-center custom-input ${validated && !isMensajeValid ? 'invalid' : ''}`}
             onChange={handleChangeMensaje}
           />
         </Form.Group>
