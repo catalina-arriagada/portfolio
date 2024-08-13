@@ -138,7 +138,7 @@ const Contact = () => {
     const nuevoMensaje = e.target.value;
     setMensaje(nuevoMensaje);
     if (validateMensaje(nuevoMensaje)) {
-      setError(""); // Limpia el error si el email es válido
+      setError(""); // Limpia el error si el mensaje es válido
     }
   };
 
