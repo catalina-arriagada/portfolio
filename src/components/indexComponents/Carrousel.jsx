@@ -6,10 +6,8 @@ import Index from '../Index.jsx';
 import Footer from '../Footer.jsx';
 import '../../styles/carousel.css';
 
-//cada imagen del carrusel respresenta marca personal
 function Carrousel() {
-
-  //poner imagenes de 3 ultimos proyectos
+  //llamar a 3 ultimos proyectos de bd
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -25,6 +23,7 @@ function Carrousel() {
     fetchLatestProjects();
   }, []);
 
+  //poner imagenes de 3 ultimos proyectos
   return (
     <div className="row">
       < Index />
@@ -33,7 +32,7 @@ function Carrousel() {
         {projects.map((project) => {
           return (
             <Carousel.Item className='text-center mt-5'>
-              <Image src={project.img} text={project.name} fluid/>
+              <Image src={project.img} fluid/>
             </Carousel.Item>
           );
         })}
