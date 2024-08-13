@@ -95,6 +95,18 @@ const contactSchema = new mongoose.Schema({
     }
   });
 
+  //obtener solo los 3 ultimos proyectos
+  // Ruta para obtener los 3 últimos proyectos
+  app.get('/projects/latest', async (req, res) => {
+    try {
+      const latestProjects = await Project.find().sort({ _id: -1 }).limit(3);
+      res.json(latestProjects);
+    } catch (error) {
+      res.status(500).json({ error: 'Error al obtener los últimos proyectos' });
+    }
+  });
+
+  
   
   app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
