@@ -1,10 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import { Form, Col, Button} from "react-bootstrap";
-import { useState } from "react";
 import "../styles/contact.css";
 import Footer from './Footer.jsx';
-
-//personalizar estilo caja rrss (color pastel, adornos)
+import axios from 'axios'
 
 const Contact = () => {
   const [error, setError] = useState("");
@@ -147,34 +145,48 @@ const Contact = () => {
   // Acciones una vez se ha hecho click en enviar submit
   const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
      const form = e.currentTarget;
      if (form.checkValidity() === false) {
        e.stopPropagation();
      }
      e.preventDefault();
 
-     // Realiza las validaciones y establece el estado de validez de los campos
-    const isNombreValido = validateNombre(nombre);
-    const isEmailValido = validateEmail(email);
-    const isMensajeValido = validateMensaje(mensaje);
-    setIsNombreValid(isNombreValido); // Actualiza el estado de validez del nombre
-    setIsEmailValid(isEmailValido); // Actualiza el estado de validez del email
-    setIsMensajeValid(isMensajeValido); // Actualiza el estado de validez del mensaje
+     try {
+      const response = await axios.post('http://localhost:5000/contacts', {
+        nombre,
+        email,
+        mensaje
+      });
 
-    if (validateNombre(nombre) && validateEmail(email) && validateMensaje(mensaje)) {
-      alert("Formulario enviado con éxito");
-      // Limpia los campos del formulario
-      setNombre("");
-      setEmail("");
-      setMensaje("");
-      setError(""); // Limpia los mensajes de error también si es necesario
-      setValidated(false); // Resetea el estado de validación
-    } else {
-      setError("Por favor, corrige los errores antes de enviar.");
+      console.log('Contacto creado:', response.data);
+      alert("Contacto creado con éxito");
+
+      // Realiza las validaciones y establece el estado de validez de los campos
+      const isNombreValido = validateNombre(nombre);
+      const isEmailValido = validateEmail(email);
+      const isMensajeValido = validateMensaje(mensaje);
+      setIsNombreValid(isNombreValido); // Actualiza el estado de validez del nombre
+      setIsEmailValid(isEmailValido); // Actualiza el estado de validez del email
+      setIsMensajeValid(isMensajeValido); // Actualiza el estado de validez del mensaje
+
+      if (validateNombre(nombre) && validateEmail(email) && validateMensaje(mensaje)) {
+        alert("Formulario enviado con éxito");
+        // Limpia los campos del formulario
+        setNombre("");
+        setEmail("");
+        setMensaje("");
+        setError(""); // Limpia los mensajes de error también si es necesario
+        setValidated(false); // Resetea el estado de validación
+      } else {
+        setError("Por favor, corrige los errores antes de enviar.");
+      }
+
+      setValidated(true);
+    } catch (error) {
+      console.error('Error al crear contacto:', error);
+      setError("Error al crear el contacto");
     }
-
-    setValidated(true);
   };
 
   return (
