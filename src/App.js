@@ -16,9 +16,9 @@ function App() {
                 <Route path='/' element={<Navbar />}>
                     <Route path='/' element={<Carrousel />}></Route>
                     <Route path='about' element={<About />}></Route>
-                    <Route path='contacto' element={<Contact />}></Route>
-                    <Route path='proyectos' element={<Webs />}></Route>
-                    <Route path='donaciones' element={<Donations />}></Route>
+                    <Route path='contact' element={<Contact />}></Route>
+                    <Route path='projects' element={<Webs />}></Route>
+                    <Route path='donations' element={<Donations />}></Route>
                 </Route>
             </Routes>    
             </div>

@@ -52,6 +52,21 @@ const contactSchema = new mongoose.Schema({
   
   const Contact = mongoose.model('Contact', contactSchema);
   
+
+  // Definir el esquema del proyecto
+  const projectSchema = new mongoose.Schema({
+    name: { type: String, required: true },      // Nombre del proyecto
+    description: { type: String, required: true }, // Descripción del proyecto
+    img: { type: String, required: true },        // URL de la imagen del proyecto
+    link: { type: String, required: true }        // URL del proyecto en producción o demo
+  }, { collection: 'projects' });  // Especifica la colección en MongoDB
+  
+  // Crear el modelo basado en el esquema
+  const Project = mongoose.model('Project', projectSchema);
+  
+  module.exports = Project;
+
+
   // Ruta para agregar un nuevo contacto
   app.post('/contacts', async (req, res) => {
     const { nombre, email, mensaje } = req.body;
@@ -69,6 +84,17 @@ const contactSchema = new mongoose.Schema({
       res.status(500).json({ error: 'Error al agregar el contacto' });
     }
   });
+
+  // Ruta para obtener los proyectos web
+  app.get('/projects', async (req, res) => {
+    try {
+      const projects = await Project.find(); //obtener todos los proyectos, el modelo se llama 'Project'
+      res.json(projects);
+    } catch (error) {
+      res.status(500).json({ error: 'Error al obtener los proyectos' });
+    }
+  });
+
   
   app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);

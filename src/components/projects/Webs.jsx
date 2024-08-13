@@ -1,55 +1,39 @@
 //proyectos web
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Col, Row } from 'react-bootstrap';
 import InvisibleButtonCard from '../projectsComponents/InvisibleButtonCard.jsx';
 import Footer from '../Footer.jsx';
+import axios from 'axios';
 import '../../styles/webs.css';
 
 const Webs = () => {
-  const BestWebProjectsArray = [
-    {
-      Id: 0,
-      Name: `Accordion Item #1`,
-      Description: `Lorem ipsum dolor sit amet, consectetur.`,
-      Img: '../img/carr-1.png',
-      Link: `https://primerproyectoweb-1.netlify.app/`,
-    },
-    {
-      Id: 1,
-      Name: `Accordion Item #2`,
-      Description: `Lorem ipsum dolor sit amet.`,
-      Img: `../img/carr-2.png`,
-      Link: `https://segundoproyectoweb2.netlify.app/`,
-    },
-    {
-      Id: 2,
-      Name: `Accordion Item #3`,
-      Description: `Lorem ipsum dolor sit.`,
-      Img: `../img/carr-3.png`,
-      Link: `https://primer-proyecto-vida.netlify.app/`,
-    },
-    {
-      Id: 3,
-      Name: `Accordion Item #3`,
-      Description: `Lorem ipsum dolor sit.`,
-      Img: `../img/pag-4.png`,
-      Link: `https://tercerproyectoweb3.netlify.app/`,
-    },
-    
-  ];
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/projects'); // Cambia la URL si es necesario
+        setProjects(response.data);
+      } catch (error) {
+        console.error('Error al obtener los proyectos:', error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   return (
     <div className="container pt-4">
       <h2 className='display-6 text-center pb-3'>Projects</h2>
       <Row xs={1} sm={2} lg={3} className="g-6 mb-5 mt-1">
-        {BestWebProjectsArray.map((Element) => (
-          <Col className="mr-3 mt-3" key={Element.Id}>
+        {projects.map((Element) => (
+          <Col className="mr-3 mt-3" key={Element._id}>
             <Card className="card-full image bg-body-secondary p-1">
-              <Card.Img variant='top' src={Element.Img} fluid />
+              <Card.Img variant='top' src={Element.img} fluid />
               <Card.Body className="cardBody">
-                <Card.Title className="cardTitle">{Element.Name}</Card.Title>
-                <Card.Text className="cardText">{Element.Description}</Card.Text>
-                <InvisibleButtonCard onClick={() => window.open(Element.Link)} />
+                <Card.Title className="cardTitle">{Element.name}</Card.Title>
+                <Card.Text className="cardText">{Element.description}</Card.Text>
+                <InvisibleButtonCard onClick={() => window.open(Element.link)} />
                </Card.Body>
             </Card>
           </Col>

@@ -17,16 +17,16 @@ const Navbar = () => {
                                     <Link className="nav-link" aria-current="page" to="/about">About</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" aria-current="page" to="/proyectos">Projects</Link>
+                                    <Link className="nav-link" aria-current="page" to="/projects">Projects</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/contacto">Contact</Link>
+                                    <Link className="nav-link" to="/contact">Contact</Link>
                                 </li>
                             </ul>
                             <form className="d-flex">
                                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li className="nav-item">
-                                        <Link className="nav-link active" aria-current="page" to="/donaciones">Donations</Link>
+                                        <Link className="nav-link active" aria-current="page" to="/donations">Donations</Link>
                                     </li>
                                 </ul>
                             </form>
