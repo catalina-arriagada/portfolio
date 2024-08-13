@@ -22,9 +22,32 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Definir el esquema y el modelo
 const contactSchema = new mongoose.Schema({
-    nombre: String,
-    email: String,
-    mensaje: String
+    nombre: {
+        type: String,
+        required: [true, 'Name is required!'],
+        minlength: 3,
+        maxlength: 30
+      },
+      email: {
+        type: String,
+        required: [true, 'Email is required!'],
+        minlength: 5,
+        maxlength: 30,
+        unique: true, // Asegura que el email sea único
+        validate: {
+          validator: function(v) {
+            // Expresión regular para validar el correo electrónico
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+          },
+          message: props => `${props.value} no es un correo electrónico válido!`
+        }
+      },
+      mensaje: {
+        type: String,
+        required: [true, 'A message is required!'],
+        minlength: 5,
+        maxlength: 310
+      }
   }, { collection: 'contacts' }); // Especifica el nombre de la colección
   
   const Contact = mongoose.model('Contact', contactSchema);
@@ -38,6 +61,11 @@ const contactSchema = new mongoose.Schema({
       await newContact.save();
       res.status(201).json(newContact);
     } catch (error) {
+        // Si ocurre un error de validación, se muestra el mensaje de error
+        if (error.name === 'ValidationError') {
+            return res.status(400).json({ error: error.message });
+        }
+
       res.status(500).json({ error: 'Error al agregar el contacto' });
     }
   });

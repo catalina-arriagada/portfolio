@@ -32,32 +32,32 @@ const Contact = () => {
 
     // Verificar primero si el nombre excede el límite de caracteres
     if (nombre.length > maxNombreLength) {
-      setError(`Nombre no debe exceder ${maxNombreLength} caracteres`);
+      setError(`Name must not exceed ${maxNombreLength} characters`);
       return false;
     }
     // Verificar primero si el nombre no alcanza el minimo de caracteres
     if (nombre.length < minNombreLength) {
-      setError(`Nombre debe contener un mínimo de ${minNombreLength} caracteres`);
+      setError(`Name must contain a minimum of ${minNombreLength} characters`);
       return false;
     }
 
     // Verifica caracteres no permitidos
     const forbiddenCharsRegex = /[@#\$%\^&\*\(\)_\+\-=\[\]{};':"\\|,.<>\/?]+/;
     if (forbiddenCharsRegex.test(nombre)) {
-      setError("Nombre contiene caracteres no permitidos");
+      setError("Name contains illegal characters");
       return false;
     }
 
     // Verifica si el nombre contiene números
     const containsNumbersRegex = /\d/;
     if (containsNumbersRegex.test(nombre)) {
-      setError("Nombre no debe contener números");
+      setError("Name must not contain numbers");
       return false;
     }
 
     // Verificar si el nombre está vacío
     if (nombre.trim().length < 0) {
-      setError("Nombre no debe estar vacío");
+      setError("Name must not be empty");
       return false;
     }
 
@@ -69,19 +69,19 @@ const Contact = () => {
     email = email?.trim() || "";
 
     if (email.length > maxEmailLength) {
-      setError(`Email no debe exceder ${maxEmailLength} caracteres`);
+      setError(`Email must not exceed ${maxEmailLength} characters`);
       return false;
     }
     // Expresión regular para validar el correo electrónico
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regex.test(email)) {
-      setError("Email no es válido");
+      setError("Email format is not valid");
       return false;
     }
 
     // Verificar primero si el nombre no alcanza el minimo de caracteres
     if (email.length < minEmailLength) {
-      setError(`Email debe contener un mínimo de ${minEmailLength} caracteres`);
+      setError(`Email must contain a minimum of ${minEmailLength} characters`);
       return false;
     }
 
@@ -93,23 +93,23 @@ const Contact = () => {
 
     if (mensaje.length > maxMensajeLength) {
 
-      setError(`Mensaje no debe exceder ${maxMensajeLength} caracteres`);
+      setError(`Message must not exceed ${maxMensajeLength} characters`);
       return false;
     }
 
     const forbiddenCharsRegex = /[#\$%\^&\*\(\)\+\=\[\]{};':"\\|,<>\/]+/;
     if (forbiddenCharsRegex.test(mensaje)) {
-      setError("Mensaje contiene caracteres no permitidos");
+      setError("Message contains illegal characters");
       return false;
     }
 
     if (mensaje.length < minMensajeLength) {
-      setError(`Mensaje debe contener un mínimo de ${minMensajeLength} caracteres`);
+      setError(`Message must contain a minimum of ${minMensajeLength} characters`);
       return false;
     }
 
     if (mensaje.trim().length < 0) {
-      setError("Mensaje no debe estar vacío");
+      setError("Message must not be empty");
       return false;
     }
     return true;
@@ -152,41 +152,39 @@ const Contact = () => {
      }
      e.preventDefault();
 
-     try {
-      const response = await axios.post('http://localhost:5000/contacts', {
-        nombre,
-        email,
-        mensaje
-      });
-
-      console.log('Contacto creado:', response.data);
-      alert("Contacto creado con éxito");
-
-      // Realiza las validaciones y establece el estado de validez de los campos
-      const isNombreValido = validateNombre(nombre);
-      const isEmailValido = validateEmail(email);
-      const isMensajeValido = validateMensaje(mensaje);
-      setIsNombreValid(isNombreValido); // Actualiza el estado de validez del nombre
-      setIsEmailValid(isEmailValido); // Actualiza el estado de validez del email
-      setIsMensajeValid(isMensajeValido); // Actualiza el estado de validez del mensaje
-
       if (validateNombre(nombre) && validateEmail(email) && validateMensaje(mensaje)) {
-        alert("Formulario enviado con éxito");
-        // Limpia los campos del formulario
-        setNombre("");
-        setEmail("");
-        setMensaje("");
-        setError(""); // Limpia los mensajes de error también si es necesario
-        setValidated(false); // Resetea el estado de validación
+        try {
+          const response = await axios.post('http://localhost:5000/contacts', {
+            nombre,
+            email,
+            mensaje
+          });
+    
+          console.log('Contact created:', response.data);
+          alert("Contact created successfully");
+    
+          // Realiza las validaciones y establece el estado de validez de los campos
+          const isNombreValido = validateNombre(nombre);
+          const isEmailValido = validateEmail(email);
+          const isMensajeValido = validateMensaje(mensaje);
+          setIsNombreValid(isNombreValido); // Actualiza el estado de validez del nombre
+          setIsEmailValid(isEmailValido); // Actualiza el estado de validez del email
+          setIsMensajeValid(isMensajeValido); // Actualiza el estado de validez del mensaje
+          alert("Form submitted successfully");
+          // Limpia los campos del formulario
+          setNombre("");
+          setEmail("");
+          setMensaje("");
+          setError(""); // Limpia los mensajes de error también si es necesario
+          setValidated(false); // Resetea el estado de validación
+        } catch (error) {
+          console.error('Error creating contact:', error);
+          setError("Error creating contact");
+        }
       } else {
-        setError("Por favor, corrige los errores antes de enviar.");
+        setError("Please, correct errors before sending.");
       }
-
       setValidated(true);
-    } catch (error) {
-      console.error('Error al crear contacto:', error);
-      setError("Error al crear el contacto");
-    }
   };
 
   return (
@@ -205,43 +203,43 @@ const Contact = () => {
           controlId="validationCustom01"
           className="mb-4"
         >
-          <Form.Label>Nombre:</Form.Label>
+          <Form.Label>Name</Form.Label>
           <Form.Control
             required
             type="text"
             value={nombre}
-            placeholder="Tu nombre"
+            placeholder="Your name"
             defaultValue=""
             className={`text-center custom-input ${validated && !isNombreValid ? 'invalid' : ''}`} // Añade clase 'invalid' si no es válido después del envío
             onChange={handleChangeNombre}
           />
         </Form.Group>
         <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
-          <Form.Label>Correo Electrónico</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             required
             type="email"
-            placeholder="tuemail@gmail.com"
+            placeholder="your-email@gmail.com"
             className={`text-center custom-input ${validated && !isEmailValid ? 'invalid' : ''}`}
             value={email}
             onChange={handleChangeEmail}
           />
         </Form.Group>
         <Form.Group className="mb-4" controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Mensaje</Form.Label>
+          <Form.Label>Comments</Form.Label>
           <Form.Control
             required
             as="textarea"
             rows={3}
             value={mensaje}
-            placeholder="Escribe aquí tus sugerencias y propuestas"
+            placeholder="Write here your offers or suggestions"
             className={`text-center custom-input ${validated && !isMensajeValid ? 'invalid' : ''}`}
             onChange={handleChangeMensaje}
           />
         </Form.Group>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <Button className="mb-2" type="submit">
-          Enviar
+          Send
         </Button>
       </Form>
 
