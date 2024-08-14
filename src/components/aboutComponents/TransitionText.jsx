@@ -40,8 +40,8 @@ function TransitionText() {
       srcCaracter: './img/profile5.png',
     },
     {
-      text: "Mis proyectos van desde tiendas online, sistemas de e-commerce, sistemas de pago seguro, etc.",
-      textEng: `My projects range from online stores, e-commerce systems, secure payment systems, etc.`,
+      text: "Mis proyectos van desde tiendas online, sistemas de e-commerce, pago seguro, etc.",
+      textEng: `My projects range from online stores, e-commerce systems, secure payment, etc.`,
       classNameCaracter: 'caracter-img',
       srcCaracter: './img/profile6.png',
     },
@@ -52,16 +52,16 @@ function TransitionText() {
       srcCaracter: './img/profile7.png',
     },
     {
-      text: `En 2020 descubrí el mundo de la programación, y me dije: "¡Me encanta! Esto es lo mío"`,
-      textEng: `In 2020 I discovered the programming world, and I told to myself: "I love it! I was born for this"`,
+      text: `En 2020 descubrí el mundo de la programación, y me dije: "Esto es lo mío."`,
+      textEng: `In 2020 I discovered the programming world, and I told to myself: "I was born for this."`,
       classNameCaracter: 'caracter-img',
-      srcCaracter: './img/profile8.png',
+      srcCaracter: './img/profile6.png',
     },
     {
-      text: "Siempre trabajo bajo contrato, y mis servicios son totalmente confiables.",
+      text: "Siempre trabajo con contrato, y mis servicios son totalmente confiables.",
       textEng: `I always work with contract, and my services are totally reliable.`,
       classNameCaracter: 'caracter-img',
-      srcCaracter: './img/profile9.png',
+      srcCaracter: './img/about2.png',
     },
     {
       text: "Estoy completamente comprometida con lo que hago y amo mi trabajo.",
@@ -70,8 +70,8 @@ function TransitionText() {
       srcCaracter: './img/profile10.png',
     },
     {
-      text: "Si quieres saber más, visita mis redes sociales ubicadas en la parte inferior, o contactate directamente conmigo en la sección de Contacto.",
-      textEng: `If you want to know more about me, visit my social networks located at the bottom, or contact me directly in the Contact section.`,
+      text: "Si quieres saber más, visita mis redes sociales o contactate conmigo en la sección de Contacto.",
+      textEng: `If you want to know more, visit my social networks, or contact me in the Contact section.`,
       classNameCaracter: 'caracter-img',
       srcCaracter: './img/profile11.png',
     },
@@ -79,7 +79,7 @@ function TransitionText() {
       text: "Muchas gracias por tu interés, ¡seguiré esforzándome!",
       textEng: `Thank you very much for your interest, I will keep trying!`,
       classNameCaracter: 'caracter-img',
-      srcCaracter: './img/profile12.png',
+      srcCaracter: './img/profile9.png',
     },
   ];
 
@@ -91,19 +91,25 @@ function TransitionText() {
 
   return (
     <div className="container">
-      <div className="mt-4">
+      <div>
+        <div className="btn-container">
           <Button
-            onClick={changeStates}
-            variant="none"
-            className="d-flex justify-content-between align-items-center button_transition_text"
-          >
-          <p className="circle-title">{states[currentIndex].textEng}</p>
-          <p className="w-25">&#x2764;</p>
-          <p className="circle-title">{states[currentIndex].text}</p>
-        
-          </Button>
-      
-       <div>
+              onClick={changeStates}
+              variant="none"
+              className="d-flex justify-content-between align-items-center button_transition_text"
+            >
+              <div id="eng-p">
+                <p className="circle-title">{states[currentIndex].textEng}</p>
+              </div>
+              <div id="heart-p">
+                <p className="w-10">&#x2764;</p>
+              </div>
+              <div id="spa-p">
+                <p className="circle-title">{states[currentIndex].text}</p>
+              </div>
+            </Button>
+        </div>
+       <div className="image-div">
           <Image
             className={states[currentIndex].classNameCaracter}
             src={states[currentIndex].srcCaracter}
