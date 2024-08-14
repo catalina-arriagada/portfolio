@@ -1,6 +1,3 @@
-//Sobre mi pagina
-//Nombre y apellido, a que me dedico, resumen de mi experiencia y objetivos.
-
 import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import TransitionText from './aboutComponents/TransitionText';
