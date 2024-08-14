@@ -17,7 +17,7 @@ const Donations = () => {
             <Image
             className="image-donar"
             src="./img/profile12.png" />
-            <a className='btn-donar mt-4 mb-3' onClick={handleClickDonacion}>Donate</a>
+            <a className='btn-donar mt-4 mb-3 scroll' onClick={handleClickDonacion}>Donate</a>
            
             <Footer className="mt-auto"/>
         </div>
