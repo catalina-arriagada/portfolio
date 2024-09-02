@@ -6,8 +6,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const port = 5000;
-
+//const port = 5000;
+const port = process.env.PORT || 5000;
 // Middleware
 app.use(cors({
     origin: 'http://localhost:3000', // Reemplazar con la URL del frontend
@@ -108,6 +108,11 @@ const contactSchema = new mongoose.Schema({
 
   
   
-  app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
-  });
+  // app.listen(port, () => {
+  //   console.log(`Servidor corriendo en http://localhost:${port}`);
+  // });
+
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
