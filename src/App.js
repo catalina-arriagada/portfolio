@@ -14,7 +14,7 @@ function App() {
             <div class= "container">
             <Routes>
                 <Route path='/' element={<Navbar />}>
-                    <Route path='/projects/latest' element={<Carrousel />}></Route>
+                    <Route path='/t' element={<Carrousel />}></Route>
                     <Route path='about' element={<About />}></Route>
                     <Route path='contact' element={<Contact />}></Route>
                     <Route path='projects' element={<Webs />}></Route>
