@@ -13,7 +13,7 @@ function Carrousel() {
   useEffect(() => {
     const fetchLatestProjects = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/projects/latest`);
+        const response = await axios.get(`https://portfolio-cp30.onrender.com/projects/latest`);
         console.log('Fetched projects:', response.data);
         setProjects(response.data);
       } catch (error) {
