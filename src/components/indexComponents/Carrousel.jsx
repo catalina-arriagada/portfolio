@@ -5,9 +5,6 @@ import { Image } from 'react-bootstrap';
 import Index from '../Index.jsx';
 import Footer from '../Footer.jsx';
 import '../../styles/carousel.css';
-const dotenv = require('dotenv');
-dotenv.config();
-const port = process.env.PORT;
 
 function Carrousel() {
   //llamar a 3 ultimos proyectos de bd
@@ -16,7 +13,7 @@ function Carrousel() {
   useEffect(() => {
     const fetchLatestProjects = async () => {
       try {
-        const response = await axios.get(`http://localhost:${port}/projects/latest`);
+        const response = await axios.get(`http://localhost:5000/projects/latest`);
         console.log('Fetched projects:', response.data);
         setProjects(response.data);
       } catch (error) {

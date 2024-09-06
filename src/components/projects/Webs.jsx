@@ -5,9 +5,6 @@ import InvisibleButtonCard from '../projectsComponents/InvisibleButtonCard.jsx';
 import Footer from '../Footer.jsx';
 import axios from 'axios';
 import '../../styles/webs.css';
-const dotenv = require('dotenv');
-dotenv.config();
-const port = process.env.PORT;
 
 const Webs = () => {
   const [projects, setProjects] = useState([]);
@@ -15,7 +12,7 @@ const Webs = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get(`http://localhost:${port}/projects`); 
+        const response = await axios.get(`http://localhost:5000/projects`); 
         setProjects(response.data);
       } catch (error) {
         console.error('Error al obtener los proyectos:', error);
