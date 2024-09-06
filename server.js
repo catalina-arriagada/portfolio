@@ -10,7 +10,8 @@ const app = express();
 const port = process.env.PORT;
 // Middleware
 app.use(cors({
-    origin: '*' // Cambia esto para producción con una URL específica si es necesario
+  origin: 'https://portfolio-cp30.onrender.com', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
 }));
 app.use(express.json());
 
