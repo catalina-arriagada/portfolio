@@ -14,12 +14,13 @@ function Carrousel() {
     const fetchLatestProjects = async () => {
       try {
         const response = await axios.get('https://portfolio-cp30.onrender.com/projects/latest');
+        console.log('Fetched projects:', response.data);
         setProjects(response.data);
       } catch (error) {
         console.error('Error al obtener los últimos proyectos:', error);
       }
     };
-
+  
     fetchLatestProjects();
   }, []);
 
