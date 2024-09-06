@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT;
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:3000', // Reemplazar con la URL del frontend
+    origin: '*' // Cambia esto para producción con una URL específica si es necesario
 }));
 app.use(express.json());
 
@@ -97,7 +97,7 @@ const contactSchema = new mongoose.Schema({
 
   //obtener solo los 3 ultimos proyectos
   // Ruta para obtener los 3 últimos proyectos
-  app.get('https://portfolio-cp30.onrender.com/projects/latest', async (req, res) => {
+  app.get('/projects/latest', async (req, res) => {
     try {
       const latestProjects = await Project.find().sort({ _id: -1 }).limit(3);
       res.json(latestProjects);
