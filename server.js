@@ -97,7 +97,7 @@ const contactSchema = new mongoose.Schema({
 
   //obtener solo los 3 ultimos proyectos
   // Ruta para obtener los 3 últimos proyectos
-  app.get('/projects/latest', async (req, res) => {
+  app.get('https://portfolio-cp30.onrender.com/projects/latest', async (req, res) => {
     try {
       const latestProjects = await Project.find().sort({ _id: -1 }).limit(3);
       res.json(latestProjects);
