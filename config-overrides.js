@@ -1,9 +1,7 @@
-const webpack = require('webpack');
-
 module.exports = function override(config) {
   config.resolve.fallback = {
     ...config.resolve.fallback,
-    os: require.resolve('os-browserify/browser'),
+    os: false, // Usar módulo vacío para 'os'
   };
 
   return config;
