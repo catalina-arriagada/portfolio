@@ -8,6 +8,12 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 //const port = process.env.PORT;
+
+app.use((req, res, next) => {
+  console.log('CORS configurado para permitir solicitudes desde:', 'https://portfolio-cp30.onrender.com');
+  next();
+});
+
 // Middleware
 app.use(cors({
   //origin: 'http://localhost:3000', 
