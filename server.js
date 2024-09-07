@@ -10,23 +10,45 @@ const port = process.env.PORT || 5000;
 //const port = process.env.PORT;
 
 app.use((req, res, next) => {
-  console.log('CORS configurado para permitir solicitudes desde:', 'https://portfolio-cp30.onrender.com');
+  console.log('CORS configurado para permitir solicitudes desde:', 'https://portfolio-4ads.vercel.app/');
   next();
 });
 
 // Middleware
 app.use(cors({
   //origin: 'http://localhost:3000', 
-  origin: 'https://portfolio-cp30.onrender.com', 
+  origin: 'https://portfolio-4ads.vercel.app/', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'], 
 }));
 app.use(express.json());
 
 // Conectar a MongoDB
-mongoose.connect(process.env.MONGODB_URI)
-.then(() => console.log('Conectado a MongoDB'))
-.catch(err => console.error('Error al conectar a MongoDB:', err));
-//
+// mongoose.connect(process.env.MONGODB_URI)
+// .then(() => console.log('Conectado a MongoDB'))
+// .catch(err => console.error('Error al conectar a MongoDB:', err));
+// //
+
+
+const connectDB = async () => {
+  if (mongoose.connection.readyState >= 1) {
+    return;
+  }
+
+  try {
+    await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 5000, // Ajusta el tiempo de espera
+    });
+    console.log('Conectado a MongoDB');
+  } catch (error) {
+    console.error('Error al conectar a MongoDB:', error);
+    process.exit(1);
+  }
+};
+
+
+connectDB();
 
 // Definir el esquema y el modelo
 const contactSchema = new mongoose.Schema({

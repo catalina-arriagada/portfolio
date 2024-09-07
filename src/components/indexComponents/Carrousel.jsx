@@ -13,7 +13,7 @@ function Carrousel() {
   useEffect(() => {
     const fetchLatestProjects = async () => {
       try {
-        const response = await axios.get(`https://portfolio-cp30.onrender.com/projects/latest`);
+        const response = await axios.get(`https://portfolio-4ads.vercel.app/projects/latest`);
         console.log('Fetched projects:', response.data);
         setProjects(response.data);
       } catch (error) {
