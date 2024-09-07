@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 // Middleware
 app.use(cors({
   //origin: 'http://localhost:3000', 
-  origin: 'https://portfolio-4ads.vercel.app/', 
+  origin: 'https://portfolio-flax-mu-88.vercel.app/', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'], 
 }));
 app.use(express.json());

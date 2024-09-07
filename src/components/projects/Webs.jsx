@@ -12,7 +12,7 @@ const Webs = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get(`https://portfolio-4ads.vercel.app/projects`); 
+        const response = await axios.get(`https://portfolio-flax-mu-88.vercel.app//projects`); 
         setProjects(response.data);
       } catch (error) {
         console.error('Error al obtener los proyectos:', error);
