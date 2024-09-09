@@ -145,6 +145,14 @@ const contactSchema = new mongoose.Schema({
   //   console.log(`Servidor corriendo en http://localhost:${port}`);
   // });
 
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 
 app.listen(port, '0.0.0.0', () => {
   console.log(`Server is running on port ${port}`);
