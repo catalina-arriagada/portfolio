@@ -10,14 +10,14 @@ const port = process.env.PORT || 5000;
 //const port = process.env.PORT;
 
 app.use((req, res, next) => {
-  console.log('CORS configurado para permitir solicitudes desde:', 'https://portfolio-4ads.vercel.app/');
+  console.log('CORS configurado para permitir solicitudes desde:', 'https://portfolio-cp30.onrender.com/');
   next();
 });
 
 // Middleware
 app.use(cors({
   //origin: 'http://localhost:3000', 
-  origin: 'https://portfolio-flax-mu-88.vercel.app/', 
+  origin: 'https://portfolio-cp30.onrender.com/', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'], 
 }));
 app.use(express.json());
@@ -35,9 +35,11 @@ const connectDB = async () => {
   }
 
   try {
-    await mongoose.connect(process.env.MONGODB_URI, {
+    await mongoose.connect(process.env.MONGODB_URI, 
+    {
       serverSelectionTimeoutMS: 5000, // Ajusta el tiempo de espera
-    });
+    }
+  );
     console.log('Conectado a MongoDB');
   } catch (error) {
     console.error('Error al conectar a MongoDB:', error);
@@ -144,6 +146,6 @@ const contactSchema = new mongoose.Schema({
   // });
 
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`Server is running on port ${port}`);
 });
